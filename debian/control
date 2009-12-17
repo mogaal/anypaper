@@ -1,0 +1,18 @@
+Source: anypaper
+Section: utils
+Priority: extra
+Maintainer: Alejandro Garrido Mota <garridomota@gmail.com>
+Build-Depends: debhelper (>= 7), autotools-dev, libgtk2.0-dev
+Standards-Version: 3.8.2
+Homepage: http://anypaper.sourceforge.net
+
+Package: anypaper
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: front-end for wallpapersetter
+ anyPaper is a front-end for wallpapersetter. it let you: Preview
+ of selected image. Six modes of setting wallpaper (fullscreen, normal, 
+ tiled, adjusted, scaled and custom scale). User can select the 
+ background color, image position, wallpapersetter and screen size.
+ Preview of background before setting no-set option for only
+ handling images (command line).

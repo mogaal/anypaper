@@ -1,0 +1,11 @@
+anypaper (2.0-1) unstable; urgency=low
+
+  * New upstream release 
+
+ -- Alejandro Garrido Mota <garridomota@gmail.com>  Thu, 17 Dec 2009 11:02:35 -0430
+
+anypaper (1.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #528162)
+
+ -- Alejandro Garrido Mota <garridomota@gmail.com>  Sun, 10 Jul 2009 14:07:39 -0430

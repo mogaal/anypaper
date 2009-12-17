@@ -1,0 +1,110 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH ANYPAPER 1 "May 10, 2009"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+anypaper \- front-end for wallpapersetter 
+.SH SYNOPSIS
+.B anypaper
+.RI [ options ] " files" ...
+.SH DESCRIPTION
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics,
+.\" respectively.
+\fBanypaper\fP is a program that let you: Preview of selected image. Six modes of setting wallpaper (fullscreen, normal, tiled, adjusted, scaled and custom scale). User can select the  background color, image position, wallpapersetter and screen size. Preview of background before setting no-set option for only handling images (command line)
+ 
+.SH HELP OPTIONS
+.TP
+.B \-?, \-\-help
+Show help options.
+.TP
+.B \-\-help-all
+Show all help options.
+
+.SH APPLICATION OPTIONS
+
+.TP
+.B \-\-license
+Display license information and exit
+.TP
+.B \-v \-\-version
+Display version information and exit
+.TP
+.B \-f \-\-fullscreen
+Set fullscreen position
+.TP
+.B \-n \-\-normal
+Set normal position
+.TP
+.B \-t \-\-tile
+Set tile position
+.TP
+.B \-m \-\-maximize
+Set maximize position
+.TP
+.B \-s \-\-scale
+Set scale position
+.TP
+.B \-c \-\-custom
+Set custom scale position
+.TP
+.B \-S \-\-set
+Set wallpaper configuration or command line configuration
+.TP
+.B \-l \-\-last
+Set the last wallpaper
+.TP
+.B \-x \-\-x\-position
+Set x position of wallpaper
+.TP
+.B \-y \-\-y\-position
+Set y position of wallpaper
+.TP
+.B \-\-x-scale
+Set x scale of wallpaper
+.TP
+.B \-\-y-scale
+Set x scale of wallpaper
+.TP
+.B \-h \-\-height
+Set x position of wallpaper
+.TP
+.B \-w \-\-width
+Set y position of wallpaper
+.TP
+.B \-b \-\-background
+Set background color
+.TP
+.B \-\-no\-set
+Disable setting function
+.TP
+.B \-p \-\-lastwallpaperfile
+lastwallpaper file (default: ~/.anypaper/lastwallpaper)
+.TP
+.B \-\-rc
+resource file (default: ~/.anypaper/anypaperrc)
+.TP
+.B \-\-display=DISPLAY
+X display to use
+
+.SH SEE ALSO
+.BR http://anypaper.sourceforge.net.
+.br
+.SH AUTHOR
+anypaper was written by Sergio Rodrigues de OLiveira Filho <cdvdt@users.sourceforge.net> .
+.PP
+This manual page was written by Alejandro Garrido Mota <garridomota@gmail.com>,
+for the Debian project (and may be used by others).
