@@ -1,8 +1,9 @@
 anypaper (2.0-1) unstable; urgency=low
 
-  * New upstream release 
-  * Update d/rules to dh7
-  * Update Standards-Version to 3.8.3 in d/control
+  * New upstream release.
+  * d/rules: Update to use dh7.
+  * d/control: Update Standards-Version field to 3.8.3.
+  * Update d/copyright to DEP5 (machine readable).
 
  -- Alejandro Garrido Mota <garridomota@gmail.com>  Thu, 17 Dec 2009 11:02:35 -0430
 
