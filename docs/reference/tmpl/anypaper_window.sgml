@@ -1,0 +1,54 @@
+<!-- ##### SECTION Title ##### -->
+AnypaperWindow
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT AnypaperWindowPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT AnypaperWindow ##### -->
+<para>
+
+</para>
+
+@parameters: 
+@image: 
+@preview: 
+
+<!-- ##### FUNCTION anypaper_window_set_position_range ##### -->
+<para>
+
+</para>
+
+@window: 
+@rangex: 
+@rangey: 
+
+
+<!-- ##### FUNCTION anypaper_window_create ##### -->
+<para>
+
+</para>
+
+@window: 
+
+

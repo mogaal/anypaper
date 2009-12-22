@@ -1,0 +1,19 @@
+This is a stable version of anyPaper.
+
+anyPaper is a front-end for wallpapersetter, you can choose the screen size, background color, image position, wallpapersetter. Has 5 modes, fullscreen, normal, tiled, adjusted, sized.
+
+Read NEWS to see whats new in this release.
+
+For copyright information see COPYING
+
+Compile and Install:
+
+  $ ./configure
+  $ make
+  and then as root
+  # make install
+
+Configuration options:
+
+  Use ./configure --help to see the full list of options
+

@@ -1,0 +1,43 @@
+<!-- ##### SECTION Title ##### -->
+AnypaperPreview
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT AnypaperPreviewPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT AnypaperPreview ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION anypaper_preview_create ##### -->
+<para>
+
+</para>
+
+@preview: 
+@parameters: 
+@image: 
+
+

@@ -1,0 +1,53 @@
+<!-- ##### SECTION Title ##### -->
+AnypaperImage
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT AnypaperImagePrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT AnypaperImage ##### -->
+<para>
+
+</para>
+
+@image: 
+@preview: 
+
+<!-- ##### FUNCTION anypaper_image_make ##### -->
+<para>
+
+</para>
+
+@image: 
+@parameters: 
+
+
+<!-- ##### FUNCTION anypaper_image_move ##### -->
+<para>
+
+</para>
+
+@image: 
+@parameters: 
+
+

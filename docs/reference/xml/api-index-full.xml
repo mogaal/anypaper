@@ -1,0 +1,28 @@
+<indexdiv>
+<indexdiv><title>A</title>
+<indexentry><primaryie linkends="AnypaperImage-struct"><link linkend="AnypaperImage">AnypaperImage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperImagePrivate"><link linkend="AnypaperImagePrivate">AnypaperImagePrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperParameters-struct"><link linkend="AnypaperParameters">AnypaperParameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperParametersPrivate"><link linkend="AnypaperParametersPrivate">AnypaperParametersPrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperPreview-struct"><link linkend="AnypaperPreview">AnypaperPreview</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperPreviewPrivate"><link linkend="AnypaperPreviewPrivate">AnypaperPreviewPrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWindow-struct"><link linkend="AnypaperWindow">AnypaperWindow</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWindowPrivate"><link linkend="AnypaperWindowPrivate">AnypaperWindowPrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-command-load"><link linkend="anypaper-command-load">anypaper_command_load</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-image-make"><link linkend="anypaper-image-make">anypaper_image_make</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-image-move"><link linkend="anypaper-image-move">anypaper_image_move</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-load"><link linkend="anypaper-parameters-load">anypaper_parameters_load</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-position-test"><link linkend="anypaper-parameters-position-test">anypaper_parameters_position_test</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-write"><link linkend="anypaper-parameters-write">anypaper_parameters_write</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-preview-create"><link linkend="anypaper-preview-create">anypaper_preview_create</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-window-create"><link linkend="anypaper-window-create">anypaper_window_create</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-window-set-position-range"><link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>L</title>
+<indexentry><primaryie linkends="LICENSE--CAPS"><link linkend="LICENSE--CAPS">LICENSE</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>S</title>
+<indexentry><primaryie linkends="show-license-and-exit"><link linkend="show-license-and-exit">show_license_and_exit</link></primaryie></indexentry>
+<indexentry><primaryie linkends="show-version-and-exit"><link linkend="show-version-and-exit">show_version_and_exit</link></primaryie></indexentry>
+</indexdiv>
+</indexdiv>

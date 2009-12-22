@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>anypaper_command</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="anypaper Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="AnypaperWindow.html" title="AnypaperWindow">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="AnypaperWindow.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">anypaper Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#anypaper-anypaper-command.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#anypaper-anypaper-command.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="anypaper-anypaper-command"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="anypaper-anypaper-command.top_of_page"></a>anypaper_command</span></h2>
+<p>anypaper_command — command-line control functions</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1" lang="en">
+<a name="anypaper-anypaper-command.stability-level"></a><h2>Stability Level</h2>
+Stable, unless otherwise indicated
+</div>
+<div class="refsynopsisdiv">
+<a name="anypaper-anypaper-command.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;anypaper_preview.h&gt;
+
+#define             LICENSE
+void                show_version_and_exit               (void);
+void                show_license_and_exit               (void);
+void                anypaper_command_load               (AnypaperParameters *parameters);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="anypaper-anypaper-command.description"></a><h2>Description</h2>
+<p>
+Set of function that controls the parameters passed by the command line and the behavior of anyPaper related to them.</p>
+<p>
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="anypaper-anypaper-command.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="LICENSE--CAPS"></a><h3>LICENSE</h3>
+<pre class="programlisting">#define             LICENSE</pre>
+<p>
+macro that defines a summary of the license used</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="show-version-and-exit"></a><h3>show_version_and_exit ()</h3>
+<pre class="programlisting">void                show_version_and_exit               (void);</pre>
+<p>
+shows the version of anyPaper and exits</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="show-license-and-exit"></a><h3>show_license_and_exit ()</h3>
+<pre class="programlisting">void                show_license_and_exit               (void);</pre>
+<p>
+shows the version of anyPaper and the content of <span class="type">LICENSE</span> and exits</p>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="anypaper-command-load"></a><h3>anypaper_command_load ()</h3>
+<pre class="programlisting">void                anypaper_command_load               (AnypaperParameters *parameters);</pre>
+<p>
+This function reads the parameters passed by the command line and sets the value to the right member of <span class="type">AnypaperParameters</span></p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
+<td> object that contains the parameters used in anyPaper
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="anypaper-anypaper-command.see-also"></a><h2>See Also</h2>
+#AnypaperImage, <span class="type">AnypaperParameters</span>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

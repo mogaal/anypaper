@@ -1,0 +1,76 @@
+<!-- ##### SECTION Title ##### -->
+AnypaperParameters
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### STRUCT AnypaperParametersPrivate ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT AnypaperParameters ##### -->
+<para>
+
+</para>
+
+@file: 
+@style: 
+@positionx: 
+@positiony: 
+@scalex: 
+@scaley: 
+@width: 
+@height: 
+@background: 
+@command: 
+@defaultfile: 
+@interpolation: 
+
+<!-- ##### FUNCTION anypaper_parameters_position_test ##### -->
+<para>
+
+</para>
+
+@parameters: 
+@rangex: 
+@rangey: 
+@positionx: 
+@positiony: 
+
+
+<!-- ##### FUNCTION anypaper_parameters_load ##### -->
+<para>
+
+</para>
+
+@parameters: 
+@filename: 
+
+
+<!-- ##### FUNCTION anypaper_parameters_write ##### -->
+<para>
+
+</para>
+
+@parameters: 
+@lastWallpaperFile: 
+@rcFile: 
+
+

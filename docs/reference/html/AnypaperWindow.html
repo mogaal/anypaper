@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AnypaperWindow</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="anypaper Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="AnypaperImage.html" title="AnypaperImage">
+<link rel="next" href="anypaper-anypaper-command.html" title="anypaper_command">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="AnypaperImage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">anypaper Reference Manual</th>
+<td><a accesskey="n" href="anypaper-anypaper-command.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#AnypaperWindow.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#AnypaperWindow.description" class="shortcut">Description</a>
+                 | 
+                <a href="#AnypaperWindow.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="AnypaperWindow"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="AnypaperWindow.top_of_page"></a>AnypaperWindow</span></h2>
+<p>AnypaperWindow — builds the user interface and controls the operation of anyPaper</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1" lang="en">
+<a name="AnypaperWindow.stability-level"></a><h2>Stability Level</h2>
+Stable, unless otherwise indicated
+</div>
+<div class="refsynopsisdiv">
+<a name="AnypaperWindow.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;anypaper_window.h&gt;
+
+                    AnypaperWindowPrivate;
+                    AnypaperWindow;
+void                anypaper_window_set_position_range  (AnypaperWindow *window,
+                                                         gint rangex,
+                                                         gint rangey);
+void                anypaper_window_create              (AnypaperWindow *window);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="AnypaperWindow.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----AnypaperWindow
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="AnypaperWindow.description"></a><h2>Description</h2>
+<p>
+The application class that builds the user interface and controls the operation of anyPaper. This class also links the objects required for the implementation of the anyPaper</p>
+<p>
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="AnypaperWindow.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="AnypaperWindowPrivate"></a><h3>AnypaperWindowPrivate</h3>
+<pre class="programlisting">typedef struct _AnypaperWindowPrivate AnypaperWindowPrivate;</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="AnypaperWindow-struct"></a><h3>AnypaperWindow</h3>
+<pre class="programlisting">typedef struct {
+	AnypaperParameters	*parameters;
+	AnypaperImage		*image;
+	AnypaperPreview		*preview;
+} AnypaperWindow;
+</pre>
+<p>
+Contains the necessary objects for operation of the anyPaper</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term">AnypaperParameters *<em class="structfield"><code>parameters</code></em>;</span></p></td>
+<td> is a <span class="type">AnypaperParameters</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term">AnypaperImage *<em class="structfield"><code>image</code></em>;</span></p></td>
+<td> is a <span class="type">AnypaperImage</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term">AnypaperPreview *<em class="structfield"><code>preview</code></em>;</span></p></td>
+<td> is a <span class="type">AnypaperPreview</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="anypaper-window-set-position-range"></a><h3>anypaper_window_set_position_range ()</h3>
+<pre class="programlisting">void                anypaper_window_set_position_range  (AnypaperWindow *window,
+                                                         gint rangex,
+                                                         gint rangey);</pre>
+<p>
+Sets the range of displacement allowed for the image.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td> the <span class="type">AnypaperWindow</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rangex</code></em> :</span></p></td>
+<td> half of the displacement allowed in x direction
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rangey</code></em> :</span></p></td>
+<td> half of the displacement allowed in y direction
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="anypaper-window-create"></a><h3>anypaper_window_create ()</h3>
+<pre class="programlisting">void                anypaper_window_create              (AnypaperWindow *window);</pre>
+<p>
+Creates and shows the <span class="type">AnypaperWindow</span>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
+<td> the <span class="type">AnypaperWindow</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="AnypaperWindow.see-also"></a><h2>See Also</h2>
+#AnypaperImage, <span class="type">AnypaperParameters</span>, <span class="type">AnypaperPreview</span>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

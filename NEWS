@@ -1,0 +1,44 @@
+============
+anyPaper 2.0
+============
+
+- Major changes in software architecture and in behavior of tiled mode
+- Added "center", "Load lastwallpaper file" and "Load rc file" buttons
+- Added documentation
+
+============
+anyPaper 1.4
+============
+
+- Added a real size preview window
+- Fixed bug with tiled style when changing background color and when cancel missing files
+
+============
+anyPaper 1.3
+============
+
+- Added Custom Scale style
+- Added warning window when applying missing files
+
+============
+anyPaper 1.2
+============
+- Fixed crash when missing parameters
+- Now can saves files in jpeg format
+- Added interpolation option on configuration tab
+
+============
+anyPaper 1.1
+============
+
+Fixes
+======================
+- Fixed crash when using options lastwallpaper or rc with an inexistent file
+
+============
+anyPaper 1.0
+============
+
+Fixes
+======================
+- Code clean-up

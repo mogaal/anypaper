@@ -1,0 +1,96 @@
+<refentry id="AnypaperPreview">
+<refmeta>
+<refentrytitle role="top_of_page" id="AnypaperPreview.top_of_page">AnypaperPreview</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>ANYPAPER Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>AnypaperPreview</refname>
+<refpurpose>builds a preview window</refpurpose>
+</refnamediv>
+<refsect1 id="AnypaperPreview.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="AnypaperPreview.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;anypaper_preview.h&gt;
+
+                    <link linkend="AnypaperPreviewPrivate">AnypaperPreviewPrivate</link>;
+                    <link linkend="AnypaperPreview-struct">AnypaperPreview</link>;
+<link linkend="void">void</link>                <link linkend="anypaper-preview-create">anypaper_preview_create</link>             (<link linkend="AnypaperPreview">AnypaperPreview</link> *preview,
+                                                         <link linkend="AnypaperParameters">AnypaperParameters</link> *parameters,
+                                                         <link linkend="AnypaperImage">AnypaperImage</link> *image);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="AnypaperPreview.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----AnypaperPreview
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="AnypaperPreview.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The application class that builds a preview window using the images and parameters provide by <link linkend="AnypaperImage"><type>AnypaperImage</type></link> and <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="AnypaperPreview.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="AnypaperPreviewPrivate" role="struct">
+<title>AnypaperPreviewPrivate</title>
+<indexterm zone="AnypaperPreviewPrivate"><primary sortas="AnypaperPreviewPrivate">AnypaperPreviewPrivate</primary></indexterm><programlisting>typedef struct _AnypaperPreviewPrivate AnypaperPreviewPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="AnypaperPreview-struct" role="struct">
+<title>AnypaperPreview</title>
+<indexterm zone="AnypaperPreview-struct"><primary sortas="AnypaperPreview">AnypaperPreview</primary></indexterm><programlisting>typedef struct _AnypaperPreview AnypaperPreview;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="anypaper-preview-create" role="function">
+<title>anypaper_preview_create ()</title>
+<indexterm zone="anypaper-preview-create"><primary sortas="anypaper_preview_create">anypaper_preview_create</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_preview_create             (<link linkend="AnypaperPreview">AnypaperPreview</link> *preview,
+                                                         <link linkend="AnypaperParameters">AnypaperParameters</link> *parameters,
+                                                         <link linkend="AnypaperImage">AnypaperImage</link> *image);</programlisting>
+<para>
+This function builds and shows the preview window</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>preview</parameter>&#160;:</term>
+<listitem><simpara> is a <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameters</parameter>&#160;:</term>
+<listitem><simpara> contains the parameters used to make the images in <link linkend="AnypaperImage"><type>AnypaperImage</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>image</parameter>&#160;:</term>
+<listitem><simpara> contains the images created before
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="AnypaperPreview.see-also">
+<title>See Also</title>
+#AnypaperImage, <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>
+</refsect1>
+
+</refentry>

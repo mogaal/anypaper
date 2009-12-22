@@ -1,0 +1,91 @@
+<refentry id="anypaper-anypaper-command">
+<refmeta>
+<refentrytitle role="top_of_page" id="anypaper-anypaper-command.top_of_page">anypaper_command</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>ANYPAPER Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>anypaper_command</refname>
+<refpurpose>command-line control functions</refpurpose>
+</refnamediv>
+<refsect1 id="anypaper-anypaper-command.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="anypaper-anypaper-command.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;anypaper_preview.h&gt;
+
+#define             <link linkend="LICENSE--CAPS">LICENSE</link>
+<link linkend="void">void</link>                <link linkend="show-version-and-exit">show_version_and_exit</link>               (void);
+<link linkend="void">void</link>                <link linkend="show-license-and-exit">show_license_and_exit</link>               (void);
+<link linkend="void">void</link>                <link linkend="anypaper-command-load">anypaper_command_load</link>               (<link linkend="AnypaperParameters">AnypaperParameters</link> *parameters);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="anypaper-anypaper-command.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+Set of function that controls the parameters passed by the command line and the behavior of anyPaper related to them.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="anypaper-anypaper-command.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="LICENSE--CAPS" role="macro">
+<title>LICENSE</title>
+<indexterm zone="LICENSE--CAPS"><primary sortas="LICENSE">LICENSE</primary></indexterm><programlisting>#define             LICENSE</programlisting>
+<para>
+macro that defines a summary of the license used</para>
+<para>
+</para></refsect2>
+<refsect2 id="show-version-and-exit" role="function">
+<title>show_version_and_exit ()</title>
+<indexterm zone="show-version-and-exit"><primary sortas="show_version_and_exit">show_version_and_exit</primary></indexterm><programlisting><link linkend="void">void</link>                show_version_and_exit               (void);</programlisting>
+<para>
+shows the version of anyPaper and exits</para>
+<para>
+</para></refsect2>
+<refsect2 id="show-license-and-exit" role="function">
+<title>show_license_and_exit ()</title>
+<indexterm zone="show-license-and-exit"><primary sortas="show_license_and_exit">show_license_and_exit</primary></indexterm><programlisting><link linkend="void">void</link>                show_license_and_exit               (void);</programlisting>
+<para>
+shows the version of anyPaper and the content of <link linkend="LICENSE--CAPS"><type>LICENSE</type></link> and exits</para>
+<para>
+</para></refsect2>
+<refsect2 id="anypaper-command-load" role="function">
+<title>anypaper_command_load ()</title>
+<indexterm zone="anypaper-command-load"><primary sortas="anypaper_command_load">anypaper_command_load</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_command_load               (<link linkend="AnypaperParameters">AnypaperParameters</link> *parameters);</programlisting>
+<para>
+This function reads the parameters passed by the command line and sets the value to the right member of <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link></para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>parameters</parameter>&#160;:</term>
+<listitem><simpara> object that contains the parameters used in anyPaper
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="anypaper-anypaper-command.see-also">
+<title>See Also</title>
+#AnypaperImage, <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>
+</refsect1>
+
+</refentry>
