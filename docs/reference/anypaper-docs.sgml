@@ -16,10 +16,10 @@
 
   <chapter>
     <title>[Insert title here]</title>
-        <xi:include href="xml/anypaper_preview.xml"/>
-    <xi:include href="xml/anypaper_parameters.xml"/>
-    <xi:include href="xml/anypaper_image.xml"/>
+        <xi:include href="xml/anypaper_parameters.xml"/>
     <xi:include href="xml/anypaper_window.xml"/>
+    <xi:include href="xml/anypaper_image.xml"/>
+    <xi:include href="xml/anypaper_preview.xml"/>
     <xi:include href="xml/anypaper_command.xml"/>
 
   </chapter>

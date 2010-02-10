@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AnypaperParameters</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
-<link rel="start" href="index.html" title="anypaper Reference Manual">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="anypaper Reference Manual">
 <link rel="up" href="ch01.html" title="[Insert title here]">
-<link rel="prev" href="AnypaperPreview.html" title="AnypaperPreview">
-<link rel="next" href="AnypaperImage.html" title="AnypaperImage">
+<link rel="prev" href="ch01.html" title="[Insert title here]">
+<link rel="next" href="AnypaperWindow.html" title="AnypaperWindow">
 <meta name="generator" content="GTK-Doc V1.11 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 <link rel="chapter" href="ch01.html" title="[Insert title here]">
@@ -17,11 +17,11 @@
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
 <tr valign="middle">
-<td><a accesskey="p" href="AnypaperPreview.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">anypaper Reference Manual</th>
-<td><a accesskey="n" href="AnypaperImage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="AnypaperWindow.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#AnypaperParameters.synopsis" class="shortcut">Top</a>
@@ -31,7 +31,7 @@
                 <a href="#AnypaperParameters.object-hierarchy" class="shortcut">Object Hierarchy</a>
 </td></tr>
 </table>
-<div class="refentry" lang="en">
+<div class="refentry" title="AnypaperParameters">
 <a name="AnypaperParameters"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -40,54 +40,54 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Stability Level">
 <a name="AnypaperParameters.stability-level"></a><h2>Stability Level</h2>
 Stable, unless otherwise indicated
 </div>
-<div class="refsynopsisdiv">
+<div class="refsynopsisdiv" title="Synopsis">
 <a name="AnypaperParameters.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
 
 #include &lt;anypaper_parameters.h&gt;
 
-                    AnypaperParametersPrivate;
-                    AnypaperParameters;
-void                anypaper_parameters_position_test   (AnypaperParameters *parameters,
+                    <a class="link" href="AnypaperParameters.html#AnypaperParametersPrivate" title="AnypaperParametersPrivate">AnypaperParametersPrivate</a>;
+                    <a class="link" href="AnypaperParameters.html#AnypaperParameters-struct" title="AnypaperParameters">AnypaperParameters</a>;
+void                <a class="link" href="AnypaperParameters.html#anypaper-parameters-position-test" title="anypaper_parameters_position_test ()">anypaper_parameters_position_test</a>   (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gint rangex,
                                                          gint rangey,
                                                          gint positionx,
                                                          gint positiony);
-void                anypaper_parameters_load            (AnypaperParameters *parameters,
+void                <a class="link" href="AnypaperParameters.html#anypaper-parameters-load" title="anypaper_parameters_load ()">anypaper_parameters_load</a>            (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gchar *filename);
-void                anypaper_parameters_write           (AnypaperParameters *parameters,
+void                <a class="link" href="AnypaperParameters.html#anypaper-parameters-write" title="anypaper_parameters_write ()">anypaper_parameters_write</a>           (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gchar *lastWallpaperFile,
                                                          gchar *rcFile);
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Object Hierarchy">
 <a name="AnypaperParameters.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
   GObject
    +----AnypaperParameters
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Description">
 <a name="AnypaperParameters.description"></a><h2>Description</h2>
 <p>
 This application class manipulates the parameters used in anyPaper, also loads and saves configuration files</p>
 <p>
 </p>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Details">
 <a name="AnypaperParameters.details"></a><h2>Details</h2>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperParametersPrivate">
 <a name="AnypaperParametersPrivate"></a><h3>AnypaperParametersPrivate</h3>
 <pre class="programlisting">typedef struct _AnypaperParametersPrivate AnypaperParametersPrivate;</pre>
 <p>
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperParameters">
 <a name="AnypaperParameters-struct"></a><h3>AnypaperParameters</h3>
 <pre class="programlisting">typedef struct {
 	gchar		*file;
@@ -175,9 +175,9 @@ Contains the parameters used to build the images created by anyPaper</p>
 </table></div>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_parameters_position_test ()">
 <a name="anypaper-parameters-position-test"></a><h3>anypaper_parameters_position_test ()</h3>
-<pre class="programlisting">void                anypaper_parameters_position_test   (AnypaperParameters *parameters,
+<pre class="programlisting">void                anypaper_parameters_position_test   (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gint rangex,
                                                          gint rangey,
                                                          gint positionx,
@@ -191,7 +191,7 @@ Sets the new position values if they are valid.</p>
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
-<td> a <span class="type">AnypaperParameters</span>
+<td> a <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 <tr>
@@ -218,12 +218,12 @@ Sets the new position values if they are valid.</p>
 </table></div>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_parameters_load ()">
 <a name="anypaper-parameters-load"></a><h3>anypaper_parameters_load ()</h3>
-<pre class="programlisting">void                anypaper_parameters_load            (AnypaperParameters *parameters,
+<pre class="programlisting">void                anypaper_parameters_load            (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gchar *filename);</pre>
 <p>
-Sets the values of parameters on file in <span class="type">AnypaperParameters</span>.</p>
+Sets the values of parameters on file in <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>.</p>
 <p>
 </p>
 <div class="variablelist"><table border="0">
@@ -231,7 +231,7 @@ Sets the values of parameters on file in <span class="type">AnypaperParameters</
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
-<td> a <span class="type">AnypaperParameters</span>
+<td> a <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 <tr>
@@ -243,13 +243,13 @@ Sets the values of parameters on file in <span class="type">AnypaperParameters</
 </table></div>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_parameters_write ()">
 <a name="anypaper-parameters-write"></a><h3>anypaper_parameters_write ()</h3>
-<pre class="programlisting">void                anypaper_parameters_write           (AnypaperParameters *parameters,
+<pre class="programlisting">void                anypaper_parameters_write           (<a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
                                                          gchar *lastWallpaperFile,
                                                          gchar *rcFile);</pre>
 <p>
-Saves the values of parameters in <span class="type">AnypaperParameters</span> on file.</p>
+Saves the values of parameters in <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a> on file.</p>
 <p>
 </p>
 <div class="variablelist"><table border="0">
@@ -257,17 +257,17 @@ Saves the values of parameters in <span class="type">AnypaperParameters</span> o
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
-<td> a <span class="type">AnypaperParameters</span>
+<td> a <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>lastWallpaperFile</code></em> :</span></p></td>
-<td> name of file to be written with the lastwallpaper parameters in <span class="type">AnypaperParameters</span>
+<td> name of file to be written with the lastwallpaper parameters in <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>rcFile</code></em> :</span></p></td>
-<td> name of file to be written with the resource parameters in <span class="type">AnypaperParameters</span>
+<td> name of file to be written with the resource parameters in <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 </tbody>

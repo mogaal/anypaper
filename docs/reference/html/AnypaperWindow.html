@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AnypaperWindow</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
-<link rel="start" href="index.html" title="anypaper Reference Manual">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="anypaper Reference Manual">
 <link rel="up" href="ch01.html" title="[Insert title here]">
-<link rel="prev" href="AnypaperImage.html" title="AnypaperImage">
-<link rel="next" href="anypaper-anypaper-command.html" title="anypaper_command">
+<link rel="prev" href="AnypaperParameters.html" title="AnypaperParameters">
+<link rel="next" href="AnypaperImage.html" title="AnypaperImage">
 <meta name="generator" content="GTK-Doc V1.11 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 <link rel="chapter" href="ch01.html" title="[Insert title here]">
@@ -17,11 +17,11 @@
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
 <tr valign="middle">
-<td><a accesskey="p" href="AnypaperImage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="AnypaperParameters.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">anypaper Reference Manual</th>
-<td><a accesskey="n" href="anypaper-anypaper-command.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="AnypaperImage.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#AnypaperWindow.synopsis" class="shortcut">Top</a>
@@ -31,7 +31,7 @@
                 <a href="#AnypaperWindow.object-hierarchy" class="shortcut">Object Hierarchy</a>
 </td></tr>
 </table>
-<div class="refentry" lang="en">
+<div class="refentry" title="AnypaperWindow">
 <a name="AnypaperWindow"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -40,48 +40,48 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Stability Level">
 <a name="AnypaperWindow.stability-level"></a><h2>Stability Level</h2>
 Stable, unless otherwise indicated
 </div>
-<div class="refsynopsisdiv">
+<div class="refsynopsisdiv" title="Synopsis">
 <a name="AnypaperWindow.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
 
 #include &lt;anypaper_window.h&gt;
 
-                    AnypaperWindowPrivate;
-                    AnypaperWindow;
-void                anypaper_window_set_position_range  (AnypaperWindow *window,
+                    <a class="link" href="AnypaperWindow.html#AnypaperWindowPrivate" title="AnypaperWindowPrivate">AnypaperWindowPrivate</a>;
+                    <a class="link" href="AnypaperWindow.html#AnypaperWindow-struct" title="AnypaperWindow">AnypaperWindow</a>;
+void                <a class="link" href="AnypaperWindow.html#anypaper-window-set-position-range" title="anypaper_window_set_position_range ()">anypaper_window_set_position_range</a>  (<a class="link" href="AnypaperWindow.html" title="AnypaperWindow">AnypaperWindow</a> *window,
                                                          gint rangex,
                                                          gint rangey);
-void                anypaper_window_create              (AnypaperWindow *window);
+void                <a class="link" href="AnypaperWindow.html#anypaper-window-create" title="anypaper_window_create ()">anypaper_window_create</a>              (<a class="link" href="AnypaperWindow.html" title="AnypaperWindow">AnypaperWindow</a> *window);
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Object Hierarchy">
 <a name="AnypaperWindow.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
   GObject
    +----AnypaperWindow
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Description">
 <a name="AnypaperWindow.description"></a><h2>Description</h2>
 <p>
 The application class that builds the user interface and controls the operation of anyPaper. This class also links the objects required for the implementation of the anyPaper</p>
 <p>
 </p>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Details">
 <a name="AnypaperWindow.details"></a><h2>Details</h2>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperWindowPrivate">
 <a name="AnypaperWindowPrivate"></a><h3>AnypaperWindowPrivate</h3>
 <pre class="programlisting">typedef struct _AnypaperWindowPrivate AnypaperWindowPrivate;</pre>
 <p>
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperWindow">
 <a name="AnypaperWindow-struct"></a><h3>AnypaperWindow</h3>
 <pre class="programlisting">typedef struct {
 	AnypaperParameters	*parameters;
@@ -97,27 +97,27 @@ Contains the necessary objects for operation of the anyPaper</p>
 <col align="left" valign="top">
 <tbody>
 <tr>
-<td><p><span class="term">AnypaperParameters *<em class="structfield"><code>parameters</code></em>;</span></p></td>
-<td> is a <span class="type">AnypaperParameters</span>
+<td><p><span class="term"><a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *<em class="structfield"><code>parameters</code></em>;</span></p></td>
+<td> is a <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </td>
 </tr>
 <tr>
-<td><p><span class="term">AnypaperImage *<em class="structfield"><code>image</code></em>;</span></p></td>
-<td> is a <span class="type">AnypaperImage</span>
+<td><p><span class="term"><a class="link" href="AnypaperImage.html" title="AnypaperImage">AnypaperImage</a> *<em class="structfield"><code>image</code></em>;</span></p></td>
+<td> is a <a class="link" href="AnypaperImage.html" title="AnypaperImage"><span class="type">AnypaperImage</span></a>
 </td>
 </tr>
 <tr>
-<td><p><span class="term">AnypaperPreview *<em class="structfield"><code>preview</code></em>;</span></p></td>
-<td> is a <span class="type">AnypaperPreview</span>
+<td><p><span class="term"><a class="link" href="AnypaperPreview.html" title="AnypaperPreview">AnypaperPreview</a> *<em class="structfield"><code>preview</code></em>;</span></p></td>
+<td> is a <a class="link" href="AnypaperPreview.html" title="AnypaperPreview"><span class="type">AnypaperPreview</span></a>
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_window_set_position_range ()">
 <a name="anypaper-window-set-position-range"></a><h3>anypaper_window_set_position_range ()</h3>
-<pre class="programlisting">void                anypaper_window_set_position_range  (AnypaperWindow *window,
+<pre class="programlisting">void                anypaper_window_set_position_range  (<a class="link" href="AnypaperWindow.html" title="AnypaperWindow">AnypaperWindow</a> *window,
                                                          gint rangex,
                                                          gint rangey);</pre>
 <p>
@@ -129,7 +129,7 @@ Sets the range of displacement allowed for the image.</p>
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
-<td> the <span class="type">AnypaperWindow</span>
+<td> the <a class="link" href="AnypaperWindow.html" title="AnypaperWindow"><span class="type">AnypaperWindow</span></a>
 </td>
 </tr>
 <tr>
@@ -146,26 +146,26 @@ Sets the range of displacement allowed for the image.</p>
 </table></div>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_window_create ()">
 <a name="anypaper-window-create"></a><h3>anypaper_window_create ()</h3>
-<pre class="programlisting">void                anypaper_window_create              (AnypaperWindow *window);</pre>
+<pre class="programlisting">void                anypaper_window_create              (<a class="link" href="AnypaperWindow.html" title="AnypaperWindow">AnypaperWindow</a> *window);</pre>
 <p>
-Creates and shows the <span class="type">AnypaperWindow</span>.</p>
+Creates and shows the <a class="link" href="AnypaperWindow.html" title="AnypaperWindow"><span class="type">AnypaperWindow</span></a>.</p>
 <p>
 </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>window</code></em> :</span></p></td>
-<td> the <span class="type">AnypaperWindow</span>
+<td> the <a class="link" href="AnypaperWindow.html" title="AnypaperWindow"><span class="type">AnypaperWindow</span></a>
 </td>
 </tr></tbody>
 </table></div>
 </div>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="See Also">
 <a name="AnypaperWindow.see-also"></a><h2>See Also</h2>
-#AnypaperImage, <span class="type">AnypaperParameters</span>, <span class="type">AnypaperPreview</span>
+#AnypaperImage, <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>, <a class="link" href="AnypaperPreview.html" title="AnypaperPreview"><span class="type">AnypaperPreview</span></a>
 </div>
 </div>
 <div class="footer">

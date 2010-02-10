@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AnypaperPreview</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
-<link rel="start" href="index.html" title="anypaper Reference Manual">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.1">
+<link rel="home" href="index.html" title="anypaper Reference Manual">
 <link rel="up" href="ch01.html" title="[Insert title here]">
-<link rel="prev" href="ch01.html" title="[Insert title here]">
-<link rel="next" href="AnypaperParameters.html" title="AnypaperParameters">
+<link rel="prev" href="AnypaperImage.html" title="AnypaperImage">
+<link rel="next" href="anypaper-anypaper-command.html" title="anypaper_command">
 <meta name="generator" content="GTK-Doc V1.11 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 <link rel="chapter" href="ch01.html" title="[Insert title here]">
@@ -17,11 +17,11 @@
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
 <tr valign="middle">
-<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="AnypaperImage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">anypaper Reference Manual</th>
-<td><a accesskey="n" href="AnypaperParameters.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="anypaper-anypaper-command.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#AnypaperPreview.synopsis" class="shortcut">Top</a>
@@ -31,7 +31,7 @@
                 <a href="#AnypaperPreview.object-hierarchy" class="shortcut">Object Hierarchy</a>
 </td></tr>
 </table>
-<div class="refentry" lang="en">
+<div class="refentry" title="AnypaperPreview">
 <a name="AnypaperPreview"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -40,58 +40,58 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Stability Level">
 <a name="AnypaperPreview.stability-level"></a><h2>Stability Level</h2>
 Stable, unless otherwise indicated
 </div>
-<div class="refsynopsisdiv">
+<div class="refsynopsisdiv" title="Synopsis">
 <a name="AnypaperPreview.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
 
 #include &lt;anypaper_preview.h&gt;
 
-                    AnypaperPreviewPrivate;
-                    AnypaperPreview;
-void                anypaper_preview_create             (AnypaperPreview *preview,
-                                                         AnypaperParameters *parameters,
-                                                         AnypaperImage *image);
+                    <a class="link" href="AnypaperPreview.html#AnypaperPreviewPrivate" title="AnypaperPreviewPrivate">AnypaperPreviewPrivate</a>;
+                    <a class="link" href="AnypaperPreview.html#AnypaperPreview-struct" title="AnypaperPreview">AnypaperPreview</a>;
+void                <a class="link" href="AnypaperPreview.html#anypaper-preview-create" title="anypaper_preview_create ()">anypaper_preview_create</a>             (<a class="link" href="AnypaperPreview.html" title="AnypaperPreview">AnypaperPreview</a> *preview,
+                                                         <a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
+                                                         <a class="link" href="AnypaperImage.html" title="AnypaperImage">AnypaperImage</a> *image);
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Object Hierarchy">
 <a name="AnypaperPreview.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="synopsis">
   GObject
    +----AnypaperPreview
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Description">
 <a name="AnypaperPreview.description"></a><h2>Description</h2>
 <p>
-The application class that builds a preview window using the images and parameters provide by <span class="type">AnypaperImage</span> and <span class="type">AnypaperParameters</span>.</p>
+The application class that builds a preview window using the images and parameters provide by <a class="link" href="AnypaperImage.html" title="AnypaperImage"><span class="type">AnypaperImage</span></a> and <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>.</p>
 <p>
 </p>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Details">
 <a name="AnypaperPreview.details"></a><h2>Details</h2>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperPreviewPrivate">
 <a name="AnypaperPreviewPrivate"></a><h3>AnypaperPreviewPrivate</h3>
 <pre class="programlisting">typedef struct _AnypaperPreviewPrivate AnypaperPreviewPrivate;</pre>
 <p>
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="AnypaperPreview">
 <a name="AnypaperPreview-struct"></a><h3>AnypaperPreview</h3>
 <pre class="programlisting">typedef struct _AnypaperPreview AnypaperPreview;</pre>
 <p>
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_preview_create ()">
 <a name="anypaper-preview-create"></a><h3>anypaper_preview_create ()</h3>
-<pre class="programlisting">void                anypaper_preview_create             (AnypaperPreview *preview,
-                                                         AnypaperParameters *parameters,
-                                                         AnypaperImage *image);</pre>
+<pre class="programlisting">void                anypaper_preview_create             (<a class="link" href="AnypaperPreview.html" title="AnypaperPreview">AnypaperPreview</a> *preview,
+                                                         <a class="link" href="AnypaperParameters.html" title="AnypaperParameters">AnypaperParameters</a> *parameters,
+                                                         <a class="link" href="AnypaperImage.html" title="AnypaperImage">AnypaperImage</a> *image);</pre>
 <p>
 This function builds and shows the preview window</p>
 <p>
@@ -101,12 +101,12 @@ This function builds and shows the preview window</p>
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>preview</code></em> :</span></p></td>
-<td> is a <span class="type">AnypaperPreview</span>
+<td> is a <a class="link" href="AnypaperPreview.html" title="AnypaperPreview"><span class="type">AnypaperPreview</span></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
-<td> contains the parameters used to make the images in <span class="type">AnypaperImage</span>
+<td> contains the parameters used to make the images in <a class="link" href="AnypaperImage.html" title="AnypaperImage"><span class="type">AnypaperImage</span></a>
 </td>
 </tr>
 <tr>
@@ -118,9 +118,9 @@ This function builds and shows the preview window</p>
 </table></div>
 </div>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="See Also">
 <a name="AnypaperPreview.see-also"></a><h2>See Also</h2>
-#AnypaperImage, <span class="type">AnypaperParameters</span>
+#AnypaperImage, <a class="link" href="AnypaperParameters.html" title="AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </div>
 </div>
 <div class="footer">

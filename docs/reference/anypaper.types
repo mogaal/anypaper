@@ -1,4 +1,4 @@
-anypaper_preview_get_type
 anypaper_parameters_get_type
-anypaper_image_get_type
 anypaper_window_get_type
+anypaper_image_get_type
+anypaper_preview_get_type
