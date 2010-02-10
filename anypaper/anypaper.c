@@ -103,7 +103,6 @@ int main( int argc, char *argv[] )
 		{
 			buffer = g_strdup_printf("%s %s", parameters->command, parameters->defaultfile);
 			if (system(buffer)) g_print("Invalid command\n");
-			else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
 		 	g_free (buffer);
 		}
 

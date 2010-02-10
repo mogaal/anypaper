@@ -1,3 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
 <indexdiv>
 <indexdiv><title>A</title>
 <indexentry><primaryie linkends="AnypaperImage-struct"><link linkend="AnypaperImage">AnypaperImage</link></primaryie></indexentry>

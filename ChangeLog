@@ -1,3 +1,9 @@
+=== anyPaper 2.1 ===
+
+2009-12-22  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper.c: Fixed bug in --last option behavior
+
 === anyPaper 2.0 ===
 
 2009-12-13  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
