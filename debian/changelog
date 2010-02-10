@@ -1,3 +1,10 @@
+anypaper (2.1-1) unstable; urgency=low
+
+  * New upstream version
+  * Update Standards-Version field to 3.8.4
+
+ -- Alejandro Garrido Mota <garridomota@gmail.com>  Wed, 10 Feb 2010 16:13:11 -0430
+
 anypaper (2.0-1) unstable; urgency=low
 
   * New upstream release.
