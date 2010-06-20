@@ -81,6 +81,12 @@ anypaper_image_init (AnypaperImage *self)
  * Generate a #GdkPixbuf background and a #GdkPixbuf base image with the parameters selected in #AnypaperParameters.
  */
 
+gint size (gint base, gint final)
+{
+	if (final%base == 0) return final;
+	else return (final/base + 1) * base;
+}
+
 void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 {
 	GdkPixbuf *tempbuf, *tempbuf2;
@@ -135,7 +141,7 @@ void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 	}
 	if (md==2)
 	{
-		tempbuf2 = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8,  (screenw/w+1)*w, (screenh/h+1)*h);
+		tempbuf2 = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, size (w, screenw), size (h, screenh));
 		tempbuf = gdk_pixbuf_add_alpha(tempbuf2, FALSE, 0, 0, 0);
 		g_object_unref(tempbuf2);		
 		while (x<(screenw))

@@ -8,18 +8,19 @@
   <bookinfo>
     <title>anypaper Reference Manual</title>
     <releaseinfo>
-      for anypaper [VERSION]
+      for anypaper 2.2
       The latest version of this documentation can be found on-line at
-      <ulink role="online-location" url="http://[SERVER]/anypaper/index.html">http://[SERVER]/anypaper/</ulink>.
+      <ulink role="online-location" url="http://anypaper.sourceforge.net/anypaper/index.html">http://anypaper.sourceforge.net/anypaper/</ulink>.
     </releaseinfo>
   </bookinfo>
 
   <chapter>
-    <title>[Insert title here]</title>
-        <xi:include href="xml/anypaper_parameters.xml"/>
-    <xi:include href="xml/anypaper_window.xml"/>
-    <xi:include href="xml/anypaper_image.xml"/>
+    <title>anyṔaper Classes</title>
+        <xi:include href="xml/anypaper_wallpapersetter.xml"/>
     <xi:include href="xml/anypaper_preview.xml"/>
+    <xi:include href="xml/anypaper_parameters.xml"/>
+    <xi:include href="xml/anypaper_image.xml"/>
+    <xi:include href="xml/anypaper_window.xml"/>
     <xi:include href="xml/anypaper_command.xml"/>
 
   </chapter>

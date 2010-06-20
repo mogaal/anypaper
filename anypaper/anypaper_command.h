@@ -46,9 +46,11 @@ void anypaper_command_load ( AnypaperParameters *parameters );
 
 gboolean custom_scale_connect_state;
 gboolean fullscreen, normal, tile, maximize, scale, custom, set, last, no_set;
+gboolean info;
+gchar *commandline;
 int x_position, y_position, height, width;
 double  x_scale, y_scale;
-gchar *background_color, *lastwallpaperfile, *rcfile, **remaining_args;
+gchar *background_color, *lastwallpaperfile, *rcfile, **remaining_args, *wallpapersetterfile;
 
 static GOptionEntry entries[] = 
 {
@@ -69,6 +71,8 @@ static GOptionEntry entries[] =
 	{ "height", 'h', G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_INT, &height, "Set x position of wallpaper", NULL },
 	{ "width", 'w', G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_INT, &width, "Set y position of wallpaper", NULL },
 	{ "background", 'b', G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_STRING, &background_color, "Set background color", NULL },
+	{ "info", 'i', G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_NONE, &info, "Show a list of installed wallpapersetter", NULL },
+	{ "command", 'u', G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_STRING, &commandline, "Set wallpapersetter command", NULL },
 	{ "no-set", 0, G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_NONE, &no_set, "Disable setting function", NULL },
 	{ "lastwallpaperfile", 'p', G_OPTION_ARG_FILENAME, G_OPTION_ARG_STRING, &lastwallpaperfile, "lastwallpaper file (default: ~/.anypaper/lastwallpaper)", NULL },
 	{ "rc", 0, G_OPTION_ARG_FILENAME, G_OPTION_ARG_STRING, &rcfile, "resource file (default: ~/.anypaper/anypaperrc)", NULL },

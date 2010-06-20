@@ -1,6 +1,3 @@
-<?xml version="1.0"?>
-<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
 <indexdiv>
 <indexdiv><title>A</title>
 <indexentry><primaryie linkends="AnypaperImage-struct"><link linkend="AnypaperImage">AnypaperImage</link></primaryie></indexentry>
@@ -9,6 +6,8 @@
 <indexentry><primaryie linkends="AnypaperParametersPrivate"><link linkend="AnypaperParametersPrivate">AnypaperParametersPrivate</link></primaryie></indexentry>
 <indexentry><primaryie linkends="AnypaperPreview-struct"><link linkend="AnypaperPreview">AnypaperPreview</link></primaryie></indexentry>
 <indexentry><primaryie linkends="AnypaperPreviewPrivate"><link linkend="AnypaperPreviewPrivate">AnypaperPreviewPrivate</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWallpapersetter-struct"><link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWallpapersetterPrivate"><link linkend="AnypaperWallpapersetterPrivate">AnypaperWallpapersetterPrivate</link></primaryie></indexentry>
 <indexentry><primaryie linkends="AnypaperWindow-struct"><link linkend="AnypaperWindow">AnypaperWindow</link></primaryie></indexentry>
 <indexentry><primaryie linkends="AnypaperWindowPrivate"><link linkend="AnypaperWindowPrivate">AnypaperWindowPrivate</link></primaryie></indexentry>
 <indexentry><primaryie linkends="anypaper-command-load"><link linkend="anypaper-command-load">anypaper_command_load</link></primaryie></indexentry>
@@ -18,6 +17,8 @@
 <indexentry><primaryie linkends="anypaper-parameters-position-test"><link linkend="anypaper-parameters-position-test">anypaper_parameters_position_test</link></primaryie></indexentry>
 <indexentry><primaryie linkends="anypaper-parameters-write"><link linkend="anypaper-parameters-write">anypaper_parameters_write</link></primaryie></indexentry>
 <indexentry><primaryie linkends="anypaper-preview-create"><link linkend="anypaper-preview-create">anypaper_preview_create</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-wallpapersetter-detect"><link linkend="anypaper-wallpapersetter-detect">anypaper_wallpapersetter_detect</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-wallpapersetter-file"><link linkend="anypaper-wallpapersetter-file">anypaper_wallpapersetter_file</link></primaryie></indexentry>
 <indexentry><primaryie linkends="anypaper-window-create"><link linkend="anypaper-window-create">anypaper_window_create</link></primaryie></indexentry>
 <indexentry><primaryie linkends="anypaper-window-set-position-range"><link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link></primaryie></indexentry>
 </indexdiv>

@@ -27,6 +27,7 @@
 #include "anypaper_parameters.h"
 #include "anypaper_image.h"
 #include "anypaper_preview.h"
+#include "anypaper_wallpapersetter.h"
 
 #define ANYPAPER_TYPE_WINDOW                  (anypaper_window_get_type ())
 #define ANYPAPER_WINDOW(obj)                  (G_TYPE_CHECK_INSTANCE_CAST ((obj), ANYPAPER_TYPE_WINDOW, AnypaperWindow))
@@ -45,6 +46,7 @@ typedef struct _AnypaperWindowPrivate AnypaperWindowPrivate;
  * @parameters: is a #AnypaperParameters
  * @image: is a #AnypaperImage
  * @preview: is a #AnypaperPreview
+ * @wallpapersetter: is a #AnypaperWallpapersetter;
  *
  * Contains the necessary objects for operation of the anyPaper
  */
@@ -54,9 +56,10 @@ struct _AnypaperWindow
 	GObject parent_instance;
 	/* instance members */
 	/*< public >*/
-	AnypaperParameters	*parameters;
-	AnypaperImage		*image;
-	AnypaperPreview		*preview;
+	AnypaperParameters		*parameters;
+	AnypaperImage			*image;
+	AnypaperPreview			*preview;
+	AnypaperWallpapersetter		*wallpapersetter;
 
 	/*< private >*/
 	AnypaperWindowPrivate	*priv;

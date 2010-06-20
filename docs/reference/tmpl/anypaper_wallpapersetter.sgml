@@ -1,5 +1,5 @@
 <!-- ##### SECTION Title ##### -->
-AnypaperWindow
+AnypaperWallpapersetter
 
 <!-- ##### SECTION Short_Description ##### -->
 
@@ -19,37 +19,34 @@ AnypaperWindow
 <!-- ##### SECTION Stability_Level ##### -->
 
 
-<!-- ##### STRUCT AnypaperWindowPrivate ##### -->
+<!-- ##### STRUCT AnypaperWallpapersetterPrivate ##### -->
 <para>
 
 </para>
 
 
-<!-- ##### STRUCT AnypaperWindow ##### -->
+<!-- ##### STRUCT AnypaperWallpapersetter ##### -->
 <para>
 
 </para>
 
-@parameters: 
-@image: 
-@preview: 
 @wallpapersetter: 
+@command: 
 
-<!-- ##### FUNCTION anypaper_window_set_position_range ##### -->
+<!-- ##### FUNCTION anypaper_wallpapersetter_detect ##### -->
 <para>
 
 </para>
 
-@window: 
-@rangex: 
-@rangey: 
+@wallpapersetter: 
+@filename: 
 
 
-<!-- ##### FUNCTION anypaper_window_create ##### -->
+<!-- ##### FUNCTION anypaper_wallpapersetter_file ##### -->
 <para>
 
 </para>
 
-@window: 
+@wallpapersetterFile: 
 
 
