@@ -24,12 +24,15 @@
 #include "anypaper_image.h"
 #include "anypaper_window.h"
 #include "anypaper_preview.h"
+#include "anypaper_wallpapersetter.h"
 
 gboolean custom_scale_connect_state =TRUE;
 gboolean fullscreen = FALSE, normal = FALSE, tile = FALSE, maximize = FALSE, scale = FALSE, custom = FALSE, set  = FALSE, last = FALSE, no_set = FALSE;
+gboolean info = FALSE;
+gchar *commandline = NULL;
 int x_position = -65536, y_position = -65536, height = -65536, width = -65536;
 double  x_scale = -1, y_scale = -1;
-gchar *background_color = NULL, *lastwallpaperfile = NULL, *rcfile = NULL, **remaining_args = NULL;
+gchar *background_color = NULL, *lastwallpaperfile = NULL, *rcfile = NULL, **remaining_args = NULL, *wallpapersetterfile = NULL;
 
 int main( int argc, char *argv[] )
 {
@@ -37,6 +40,7 @@ int main( int argc, char *argv[] )
 	AnypaperImage *image;
 	AnypaperPreview *preview;
 	AnypaperWindow *window;
+	AnypaperWallpapersetter *wallpapersetter;
 	gchar *buffer, *down_filename;
 	GdkScreen *screen;
 	GError *error = NULL;
@@ -62,10 +66,13 @@ int main( int argc, char *argv[] )
 
 	preview = g_object_new (ANYPAPER_TYPE_PREVIEW, NULL);
 
+	wallpapersetter = g_object_new (ANYPAPER_TYPE_WALLPAPERSETTER, NULL);
+
 	window = g_object_new (ANYPAPER_TYPE_WINDOW, NULL);
 	window->parameters = parameters;
 	window->image = image;
 	window->preview = preview;
+	window->wallpapersetter = wallpapersetter;
 
 	buffer = g_strdup_printf("%s/.anypaper", g_get_home_dir ());
 	if (!g_file_test (buffer, G_FILE_TEST_EXISTS)) g_mkdir(buffer, 0777);
@@ -74,6 +81,37 @@ int main( int argc, char *argv[] )
 	if (rcfile == NULL) rcfile = g_strdup_printf("%s/.anypaper/anypaperrc", g_get_home_dir ());
 	if (lastwallpaperfile == NULL) lastwallpaperfile = g_strdup_printf("%s/.anypaper/lastwallpaper", g_get_home_dir ());
 	if (g_file_test (rcfile, G_FILE_TEST_EXISTS)) anypaper_parameters_load(parameters, rcfile);
+
+	if (wallpapersetterfile == NULL) wallpapersetterfile = g_strdup_printf("%s/.anypaper/wallpapersetters", g_get_home_dir ());
+	if (!g_file_test (wallpapersetterfile, G_FILE_TEST_EXISTS))
+	{
+		anypaper_wallpapersetter_file(wallpapersetterfile);
+		anypaper_wallpapersetter_detect (wallpapersetter, wallpapersetterfile);
+		if (wallpapersetter->wallpapersetter) 
+		{
+			g_free(window->parameters->command);
+			window->parameters->command = g_strdup_printf("%s %s", (gchar *) wallpapersetter->wallpapersetter->data, (gchar *) wallpapersetter->command->data);
+		}
+		else g_print("No wallpapersetter found. A list of known wallpapersetter can be found in %s. You can install a wallpapersetter from that list, manually add a command to it or use directly a command of your preference\n", wallpapersetterfile);
+	}
+
+	if (info == TRUE)
+	{
+		GList *current=NULL, *current_com=NULL;
+		anypaper_wallpapersetter_detect (wallpapersetter, wallpapersetterfile);
+		current = g_list_first (wallpapersetter->wallpapersetter);
+		current_com = g_list_first (wallpapersetter->command);
+		if (current)
+			while (current)
+			{
+				g_print("found: %s com: %s\n", (gchar *) current->data, (gchar *) current_com->data);
+				current = g_list_next(current);
+				current_com = g_list_next(current_com);
+			}
+		else g_print("none found");
+		exit (EXIT_SUCCESS);
+	}
+
 	if (last == FALSE)
 	{
 		if (g_file_test (lastwallpaperfile, G_FILE_TEST_EXISTS))

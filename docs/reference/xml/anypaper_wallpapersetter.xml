@@ -1,0 +1,119 @@
+<refentry id="AnypaperWallpapersetter">
+<refmeta>
+<refentrytitle role="top_of_page" id="AnypaperWallpapersetter.top_of_page">AnypaperWallpapersetter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>ANYPAPER Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>AnypaperWallpapersetter</refname>
+<refpurpose>creates the wallpapersetter file and detects the wallpapersetter installed</refpurpose>
+</refnamediv>
+<refsect1 id="AnypaperWallpapersetter.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="AnypaperWallpapersetter.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;anypaper_wallpapersetter.h&gt;
+
+                    <link linkend="AnypaperWallpapersetterPrivate">AnypaperWallpapersetterPrivate</link>;
+                    <link linkend="AnypaperWallpapersetter-struct">AnypaperWallpapersetter</link>;
+<link linkend="void">void</link>                <link linkend="anypaper-wallpapersetter-detect">anypaper_wallpapersetter_detect</link>     (<link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link> *wallpapersetter,
+                                                         <link linkend="gchar">gchar</link> *filename);
+<link linkend="void">void</link>                <link linkend="anypaper-wallpapersetter-file">anypaper_wallpapersetter_file</link>       (<link linkend="gchar">gchar</link> *wallpapersetterFile);
+</synopsis>
+</refsynopsisdiv>
+
+<refsect1 id="AnypaperWallpapersetter.object-hierarchy" role="object_hierarchy">
+<title role="object_hierarchy.title">Object Hierarchy</title>
+<synopsis>
+  <link linkend="GObject">GObject</link>
+   +----AnypaperWallpapersetter
+</synopsis>
+</refsect1>
+
+
+
+
+
+
+
+
+<refsect1 id="AnypaperWallpapersetter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+This application class creates the wallpapersetter file and detects the wallpapersetter installed
+</para>
+<para>
+This application class detects the wallpapersetter listed in wallpapersetter file installed and stores this information in two lists, one for the wallpapersetter found and the other for the command (normally the fullscreen command). This class also creates the wallpapersetterfile that contains definitions for known wallpapersetters and the command used to set the wallpaper.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="AnypaperWallpapersetter.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="AnypaperWallpapersetterPrivate" role="struct">
+<title>AnypaperWallpapersetterPrivate</title>
+<indexterm zone="AnypaperWallpapersetterPrivate"><primary sortas="AnypaperWallpapersetterPrivate">AnypaperWallpapersetterPrivate</primary></indexterm><programlisting>typedef struct _AnypaperWallpapersetterPrivate AnypaperWallpapersetterPrivate;</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="AnypaperWallpapersetter-struct" role="struct">
+<title>AnypaperWallpapersetter</title>
+<indexterm zone="AnypaperWallpapersetter-struct"><primary sortas="AnypaperWallpapersetter">AnypaperWallpapersetter</primary></indexterm><programlisting>typedef struct {
+	GList	*wallpapersetter;
+	GList	*command;
+} AnypaperWallpapersetter;
+</programlisting>
+<para>
+Contains a list of wallpapersetter found and a list of commands used for them</para>
+<para>
+</para><variablelist role="struct">
+<varlistentry>
+<term><link linkend="GList">GList</link>&#160;*<structfield>wallpapersetter</structfield>;</term>
+<listitem><simpara> contains a list of wallpapersetter found
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="GList">GList</link>&#160;*<structfield>command</structfield>;</term>
+<listitem><simpara> contains a list of commands used for the wallpapersetter found
+</simpara></listitem>
+</varlistentry>
+</variablelist></refsect2>
+<refsect2 id="anypaper-wallpapersetter-detect" role="function">
+<title>anypaper_wallpapersetter_detect ()</title>
+<indexterm zone="anypaper-wallpapersetter-detect"><primary sortas="anypaper_wallpapersetter_detect">anypaper_wallpapersetter_detect</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_wallpapersetter_detect     (<link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link> *wallpapersetter,
+                                                         <link linkend="gchar">gchar</link> *filename);</programlisting>
+<para>
+Generate a list of found wallpapersetters and other for the associated commands.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>wallpapersetter</parameter>&#160;:</term>
+<listitem><simpara> a <link linkend="AnypaperWallpapersetter"><type>AnypaperWallpapersetter</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>filename</parameter>&#160;:</term>
+<listitem><simpara> file that contains the wallpapersetters command definition
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="anypaper-wallpapersetter-file" role="function">
+<title>anypaper_wallpapersetter_file ()</title>
+<indexterm zone="anypaper-wallpapersetter-file"><primary sortas="anypaper_wallpapersetter_file">anypaper_wallpapersetter_file</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_wallpapersetter_file       (<link linkend="gchar">gchar</link> *wallpapersetterFile);</programlisting>
+<para>
+Generate a file with names of wallpapersetter and the associated commands.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>wallpapersetterFile</parameter>&#160;:</term>
+<listitem><simpara> filename to store the wallpapersetters command definition
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

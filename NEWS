@@ -1,4 +1,13 @@
 ============
+anyPaper 2.2
+============
+
+- Fixed bug in tiled option.
+- Added detection of installed  wallpapersetters.
+- Added --info and --command options.
+- Changed the way of detecting setting wallpaper error, now tests if the command exists.
+
+============
 anyPaper 2.1
 ============
 

@@ -304,7 +304,19 @@ static void set_image_interpolation_cb ( GtkWidget *widget, AnypaperWindow *wind
 	unblock_callback(window);
 }
 
-gboolean set_wallpaper_common ( AnypaperWindow *window )
+gboolean test_command_exists(gchar *command)
+{
+	gchar **field;
+	field = g_strsplit (command, " ", -1);
+	if (g_find_program_in_path (field[0]) == NULL)
+	{
+		if (!g_file_test (field[0], G_FILE_TEST_EXISTS)) return FALSE;
+		else TRUE;
+	}
+	else TRUE;
+}
+
+/*gboolean set_wallpaper_common ( AnypaperWindow *window )
 {
 	GtkWidget *dialog;
 	char *buffer, *down_filename;
@@ -350,6 +362,76 @@ gboolean set_wallpaper_common ( AnypaperWindow *window )
 			 	g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
 				gtk_widget_show(dialog);
 			result = FALSE;
+			}
+		}
+		else
+		{
+			dialog = gtk_message_dialog_new (GTK_WINDOW (window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Invalid format");
+			gtk_window_set_title (GTK_WINDOW (dialog), "Error");
+		 	g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+			gtk_widget_show(dialog);
+			result = FALSE;
+		}
+		g_free (down_filename);
+		if (result == TRUE) anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+	}
+	return result;
+}*/
+
+gboolean set_wallpaper_common ( AnypaperWindow *window )
+{
+	GtkWidget *dialog;
+	char *buffer, *down_filename;
+	gboolean result = TRUE;
+
+	if (rcfile == NULL) rcfile = g_strdup_printf("%s/.anypaper/anypaperrc", g_get_home_dir ());
+	if (lastwallpaperfile == NULL) lastwallpaperfile = g_strdup_printf("%s/.anypaper/lastwallpaper", g_get_home_dir ());
+	window->parameters->defaultfile = gtk_entry_get_text (GTK_ENTRY (window->priv->def_entry));
+	window->parameters->command = gtk_entry_get_text (GTK_ENTRY (window->priv->com_entry));
+	down_filename = g_ascii_strdown (window->parameters->defaultfile, -1);
+
+	if (!g_file_test (window->parameters->file, G_FILE_TEST_EXISTS))
+	{
+		dialog = gtk_message_dialog_new (GTK_WINDOW (window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "No such file exists");
+		gtk_window_set_title (GTK_WINDOW (dialog), "Error");
+		g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+		gtk_widget_show(dialog);
+		result = FALSE;
+	}
+	else
+	{
+		if ((g_str_has_suffix (down_filename, ".jpg")) || (g_str_has_suffix (down_filename, ".jpeg"))) 
+		{
+			if (test_command_exists(window->parameters->command) == FALSE)
+			{
+				dialog = gtk_message_dialog_new (GTK_WINDOW (window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Command not found");
+				gtk_window_set_title (GTK_WINDOW (dialog), "Error");
+			 	g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+				gtk_widget_show(dialog);
+			result = FALSE;
+			}
+			else
+			{
+				gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "jpeg", NULL, "quality", "100", NULL);
+				buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
+				system (buffer);
+			}
+		}
+		else if(g_str_has_suffix (down_filename, ".png"))
+		{
+			if (test_command_exists(window->parameters->command) == FALSE)
+			{
+				dialog = gtk_message_dialog_new (GTK_WINDOW (window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Command not found");
+				gtk_window_set_title (GTK_WINDOW (dialog), "Error");
+			 	g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+				gtk_widget_show(dialog);
+			result = FALSE;
+			}
+			else
+			{
+				gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "png", NULL, NULL);
+				buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
+				system (buffer);
 			}
 		}
 		else
@@ -570,6 +652,63 @@ void about_window_cb( GtkWidget *widget, gpointer data )
 		g_object_unref (logo);
 }
 
+void detect_popup_cb( GtkWidget *widget, AnypaperWindow *window )
+{
+	if (!g_file_test (wallpapersetterfile, G_FILE_TEST_EXISTS)) anypaper_wallpapersetter_file(wallpapersetterfile);
+	anypaper_wallpapersetter_detect (window->wallpapersetter, wallpapersetterfile);
+
+	if (window->wallpapersetter->wallpapersetter)
+	{
+		GtkWidget *dialog, *label, *content_area, *box, *halign, *combo;
+		GList *atual=NULL, *atual_com=NULL;
+
+		dialog = gtk_dialog_new_with_buttons ("Detected wallpapersetters", GTK_WINDOW(window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_STOCK_OK, GTK_RESPONSE_ACCEPT, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, NULL);
+		content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
+
+		box = gtk_vbox_new (FALSE, 0);
+		gtk_container_add (GTK_CONTAINER (content_area), box);
+
+		label = gtk_label_new ("Are listed below the wallpapersetter found,\nplease select one:");
+		gtk_box_pack_start (GTK_BOX(box), label, FALSE, TRUE, 2);
+
+		halign = gtk_alignment_new(0, 1, 0, 0);
+		combo = gtk_combo_box_new_text ();
+		gtk_container_add(GTK_CONTAINER(halign), combo);
+
+		atual = g_list_first (window->wallpapersetter->wallpapersetter);
+		atual_com = g_list_first (window->wallpapersetter->command);
+
+		while (atual)
+		{
+			gtk_combo_box_append_text (GTK_COMBO_BOX (combo), atual->data);
+			atual = g_list_next(atual);
+		}
+
+		gtk_combo_box_set_active (GTK_COMBO_BOX (combo), 0);
+		gtk_box_pack_start (GTK_BOX(box), halign, FALSE, TRUE, 2);
+		gtk_widget_show_all (dialog);
+
+		if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+		{
+			gchar *command;
+			atual = g_list_nth (window->wallpapersetter->wallpapersetter, gtk_combo_box_get_active (GTK_COMBO_BOX (combo)));
+			atual_com = g_list_nth (window->wallpapersetter->command, gtk_combo_box_get_active (GTK_COMBO_BOX (combo)));
+			command = g_strdup_printf("%s %s", (gchar *) atual->data, (gchar *) atual_com->data);
+			gtk_entry_set_text (GTK_ENTRY (window->priv->com_entry), command);
+			g_free(command);
+		}
+
+		gtk_widget_destroy (dialog);
+	}
+	else
+	{
+		GtkWidget *dialog;
+		dialog = gtk_message_dialog_new (GTK_WINDOW(window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_WARNING, GTK_BUTTONS_CLOSE, "No wallpapersetter found. A list of known wallpapersetter can be found in %s. You can install a wallpapersetter from that list, manually add a command to it or use directly a command of your preference", wallpapersetterfile);
+		gtk_window_set_title (GTK_WINDOW(dialog), "Warning");
+		gtk_dialog_run (GTK_DIALOG (dialog));
+		gtk_widget_destroy (dialog);
+	}
+}
 /**
  * anypaper_window_set_position_range:
  * @window: the #AnypaperWindow
@@ -882,6 +1021,11 @@ void anypaper_window_create (AnypaperWindow *self)
 	gtk_label_set_justify (GTK_LABEL (label), GTK_JUSTIFY_LEFT);
 	gtk_table_attach (GTK_TABLE (table), label, 0, 1, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
 	gtk_widget_show (label);
+	
+	button = gtk_button_new_with_mnemonic ("Detect");
+	g_signal_connect (G_OBJECT (button), "clicked", G_CALLBACK (detect_popup_cb), self);
+	gtk_table_attach (GTK_TABLE (table), button, 2, 3, 1, 2, GTK_FILL, GTK_FILL, 0, 0);
+	gtk_widget_show (button);
 
 	priv->com_entry = gtk_entry_new();
 	gtk_entry_set_text (GTK_ENTRY (priv->com_entry), self->parameters->command);

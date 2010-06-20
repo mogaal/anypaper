@@ -1,8 +1,28 @@
+=== anyPaper 2.2 ===
+
+2010-05-01  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_image.c (anypaper_image_make, size): Fixed bug in tiled option.
+
+2010-24-04  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_wallpapersetter.c: Code clean-up.
+	* anypaper/anypaper.c (main), anypaper/anypaper_command.c (anypaper_command_load), anypaper/anypaper_command.h (entries): Added detection of wallpapersetter if wallpapersettersfile doesn't exist. Added --info and --command options.
+
+2010-12-04  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_window.c (anypaper_window_create, detect_popup_cb): Added detect wallpapersetter button on main window and popup window for choosing the installed wallpapersetter if any one was found.
+	* anypaper/anypaper_window.c (set_wallpaper_common): Changed the way of detecting setting wallpaper error, now tests if the command exists.
+
+2010-02-04  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_wallpapersetter.c,  anypaper/anypaper_wallpapersetter.h: Added AnypaperWallpapersetter class for dectecting installed wallpapersetters.
+
 === anyPaper 2.1 ===
 
 2009-12-22  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
 
-	* anypaper.c: Fixed bug in --last option behavior
+	* anypaper/anypaper.c: Fixed bug in --last option behavior.
 
 === anyPaper 2.0 ===
 

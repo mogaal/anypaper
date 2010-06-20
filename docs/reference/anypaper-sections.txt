@@ -1,4 +1,37 @@
 <SECTION>
+<FILE>anypaper_wallpapersetter</FILE>
+AnypaperWallpapersetterPrivate
+<TITLE>AnypaperWallpapersetter</TITLE>
+AnypaperWallpapersetter
+anypaper_wallpapersetter_detect
+anypaper_wallpapersetter_file
+<SUBSECTION Standard>
+ANYPAPER_WALLPAPERSETTER
+ANYPAPER_IS_WALLPAPERSETTER
+ANYPAPER_TYPE_WALLPAPERSETTER
+anypaper_wallpapersetter_get_type
+ANYPAPER_WALLPAPERSETTER_CLASS
+ANYPAPER_IS_WALLPAPERSETTER_CLASS
+ANYPAPER_WALLPAPERSETTER_GET_CLASS
+</SECTION>
+
+<SECTION>
+<FILE>anypaper_preview</FILE>
+AnypaperPreviewPrivate
+<TITLE>AnypaperPreview</TITLE>
+AnypaperPreview
+anypaper_preview_create
+<SUBSECTION Standard>
+ANYPAPER_PREVIEW
+ANYPAPER_IS_PREVIEW
+ANYPAPER_TYPE_PREVIEW
+anypaper_preview_get_type
+ANYPAPER_PREVIEW_CLASS
+ANYPAPER_IS_PREVIEW_CLASS
+ANYPAPER_PREVIEW_GET_CLASS
+</SECTION>
+
+<SECTION>
 <FILE>anypaper_parameters</FILE>
 AnypaperParametersPrivate
 <TITLE>AnypaperParameters</TITLE>
@@ -14,23 +47,6 @@ anypaper_parameters_get_type
 ANYPAPER_PARAMETERS_CLASS
 ANYPAPER_IS_PARAMETERS_CLASS
 ANYPAPER_PARAMETERS_GET_CLASS
-</SECTION>
-
-<SECTION>
-<FILE>anypaper_window</FILE>
-AnypaperWindowPrivate
-<TITLE>AnypaperWindow</TITLE>
-AnypaperWindow
-anypaper_window_set_position_range
-anypaper_window_create
-<SUBSECTION Standard>
-ANYPAPER_WINDOW
-ANYPAPER_IS_WINDOW
-ANYPAPER_TYPE_WINDOW
-anypaper_window_get_type
-ANYPAPER_WINDOW_CLASS
-ANYPAPER_IS_WINDOW_CLASS
-ANYPAPER_WINDOW_GET_CLASS
 </SECTION>
 
 <SECTION>
@@ -51,19 +67,20 @@ ANYPAPER_IMAGE_GET_CLASS
 </SECTION>
 
 <SECTION>
-<FILE>anypaper_preview</FILE>
-AnypaperPreviewPrivate
-<TITLE>AnypaperPreview</TITLE>
-AnypaperPreview
-anypaper_preview_create
+<FILE>anypaper_window</FILE>
+AnypaperWindowPrivate
+<TITLE>AnypaperWindow</TITLE>
+AnypaperWindow
+anypaper_window_set_position_range
+anypaper_window_create
 <SUBSECTION Standard>
-ANYPAPER_PREVIEW
-ANYPAPER_IS_PREVIEW
-ANYPAPER_TYPE_PREVIEW
-anypaper_preview_get_type
-ANYPAPER_PREVIEW_CLASS
-ANYPAPER_IS_PREVIEW_CLASS
-ANYPAPER_PREVIEW_GET_CLASS
+ANYPAPER_WINDOW
+ANYPAPER_IS_WINDOW
+ANYPAPER_TYPE_WINDOW
+anypaper_window_get_type
+ANYPAPER_WINDOW_CLASS
+ANYPAPER_IS_WINDOW_CLASS
+ANYPAPER_WINDOW_GET_CLASS
 </SECTION>
 
 <SECTION>

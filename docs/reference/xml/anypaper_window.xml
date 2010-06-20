@@ -1,6 +1,3 @@
-<?xml version="1.0"?>
-<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
 <refentry id="AnypaperWindow">
 <refmeta>
 <refentrytitle role="top_of_page" id="AnypaperWindow.top_of_page">AnypaperWindow</refentrytitle>
@@ -66,9 +63,10 @@ The application class that builds the user interface and controls the operation 
 <refsect2 id="AnypaperWindow-struct" role="struct">
 <title>AnypaperWindow</title>
 <indexterm zone="AnypaperWindow-struct"><primary sortas="AnypaperWindow">AnypaperWindow</primary></indexterm><programlisting>typedef struct {
-	AnypaperParameters	*parameters;
-	AnypaperImage		*image;
-	AnypaperPreview		*preview;
+	AnypaperParameters		*parameters;
+	AnypaperImage			*image;
+	AnypaperPreview			*preview;
+	AnypaperWallpapersetter		*wallpapersetter;
 } AnypaperWindow;
 </programlisting>
 <para>
@@ -88,6 +86,11 @@ Contains the necessary objects for operation of the anyPaper</para>
 <varlistentry>
 <term><link linkend="AnypaperPreview">AnypaperPreview</link>&#160;*<structfield>preview</structfield>;</term>
 <listitem><simpara> is a <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
+</simpara></listitem>
+</varlistentry>
+<varlistentry>
+<term><link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link>&#160;*<structfield>wallpapersetter</structfield>;</term>
+<listitem><simpara> is a <link linkend="AnypaperWallpapersetter"><type>AnypaperWallpapersetter</type></link>;
 </simpara></listitem>
 </varlistentry>
 </variablelist></refsect2>
