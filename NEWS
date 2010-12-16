@@ -2,6 +2,17 @@
 anyPaper 2.2
 ============
 
+- Changed behavior when the image file couldn't be opened
+- Added error message for when the image file could not be opened
+- Added file filter on "Default file", "Open File" e "Save as..." dialog.
+- Added hiding scrollbars for preview window in fullscreen.
+- Updated wallpapersetter list.
+- Added error handling for file not found and command not found.
+
+============
+anyPaper 2.2
+============
+
 - Fixed bug in tiled option.
 - Added detection of installed  wallpapersetters.
 - Added --info and --command options.

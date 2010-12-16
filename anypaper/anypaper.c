@@ -104,7 +104,7 @@ int main( int argc, char *argv[] )
 		if (current)
 			while (current)
 			{
-				g_print("found: %s com: %s\n", (gchar *) current->data, (gchar *) current_com->data);
+				g_print("found: %s, options: %s\n", (gchar *) current->data, (gchar *) current_com->data);
 				current = g_list_next(current);
 				current_com = g_list_next(current_com);
 			}
@@ -136,39 +136,115 @@ int main( int argc, char *argv[] )
 
 	if (last == TRUE)
 	{
-		if (!g_file_test (parameters->defaultfile, G_FILE_TEST_EXISTS)) g_print("No such file exists");
+		if (!g_file_test (parameters->defaultfile, G_FILE_TEST_EXISTS)) g_printerr("Default output file not found\n");
 		else 
 		{
+			gchar *std_out, *std_err;
+			/*GError *err = NULL;*/
+			gint exitStatus;
+
 			buffer = g_strdup_printf("%s %s", parameters->command, parameters->defaultfile);
-			if (system(buffer)) g_print("Invalid command\n");
+			if (g_spawn_command_line_sync (buffer, &std_out, &std_err, &exitStatus, NULL) == FALSE) g_printerr("Invalid command\n");
+			else
+			{
+				if (*std_out != NULL)
+				{
+					g_print ("Output:\n%s", std_out);
+					g_free (std_out);
+				}
+				if (*std_err != NULL)
+				{
+					g_printerr ("Error:\n%s", std_err);
+					g_free (std_err);
+				}
+			}
+
+			/*if (system(buffer)) g_print("Invalid command\n");*/
 		 	g_free (buffer);
 		}
 
 	}
 	else if (set == TRUE)
 	{
+		gchar *std_out, *std_err;
+		GError *err = NULL;
+		gint exitStatus;
+
 		down_filename = g_ascii_strdown (window->parameters->defaultfile, -1);
 		if ((g_str_has_suffix (down_filename, ".jpg")) || (g_str_has_suffix (down_filename, ".jpeg"))) 
 		{
 			gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "jpeg", NULL, "quality", "100", NULL);
 			buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
-			if (system (buffer)) g_print("Invalid command\n");
-			else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+			if (g_spawn_command_line_sync (buffer, &std_out, &std_err, &exitStatus, &err) == FALSE)
+			{
+				g_print("%s\n", err->message);
+				g_clear_error(&err);
+			}
+			/*if (system (buffer)) g_print("Invalid command\n");*/
+			else
+			{
+				if (*std_out != NULL)
+				{
+					g_print ("Output:\n%s", std_out);
+					g_free (std_out);
+				}
+				if (*std_err != NULL)
+				{
+					g_printerr ("Error:\n%s", std_err);
+					g_free (std_err);
+				}
+				else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+			}
 		 	g_free (buffer);
 		}
 		else if(g_str_has_suffix (down_filename, ".png"))
 		{
 			gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "png", NULL, NULL);
 			buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
-			if (system (buffer)) g_print("Invalid command\n");
-			else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+			if (g_spawn_command_line_sync (buffer, &std_out, &std_err, &exitStatus, &err) == FALSE)
+			{
+				g_print("%s\n", err->message);
+				g_clear_error(&err);
+			}
+			/*if (system (buffer)) g_print("Invalid command\n");*/
+			else
+			{
+				if (*std_out != NULL)
+				{
+					g_print ("Output:\n%s", std_out);
+					g_free (std_out);
+				}
+				if (*std_err != NULL)
+				{
+					g_printerr ("Error:\n%s", std_err);
+					g_free (std_err);
+				}
+				else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+			}
 		 	g_free (buffer);
 		}
-		else g_print("Invalid format");
+		else g_printerr("Could not open image file");
 		g_free (down_filename);
 		buffer = g_strdup_printf("%s %s", parameters->command, parameters->defaultfile);
-		if (system(buffer)) g_print("Invalid command\n");
-		else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+		if (g_spawn_command_line_sync (buffer, &std_out, &std_err, &exitStatus, &err) == FALSE)/*(system(buffer))*/
+		{
+			g_print("%s\n", err->message);
+			g_clear_error(&err);
+		}
+		else
+		{
+			if (*std_out != NULL)
+			{
+				g_print ("Output:\n%s", std_out);
+				g_free (std_out);
+			}
+			if (*std_err != NULL)
+			{
+				g_printerr ("Error:\n%s", std_err);
+				g_free (std_err);
+			}
+			else anypaper_parameters_write ( window->parameters, lastwallpaperfile, rcfile);
+		}
 	 	g_free (buffer);
 
 	}

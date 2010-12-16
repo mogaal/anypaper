@@ -90,7 +90,11 @@ void anypaper_command_load (AnypaperParameters *parameters)
 	g_print("%s", background_color);
 	e=option_command();
 	if (e != 6) parameters->style = e;
-	if (remaining_args != 0) if (g_file_test(remaining_args[0], G_FILE_TEST_EXISTS)) parameters->file = g_strdup_printf("%s", remaining_args[0]);
+	if (remaining_args != 0)
+	{
+		if (g_file_test(remaining_args[0], G_FILE_TEST_EXISTS)) parameters->file = g_strdup_printf("%s", remaining_args[0]);
+		else g_printerr("File not found (%s)\n", remaining_args[0]);
+	}
 	if (x_position != -65536) parameters->positionx=x_position;
 	if (y_position != -65536) parameters->positiony=y_position;
 	if (x_scale != -1) parameters->scalex=x_scale;

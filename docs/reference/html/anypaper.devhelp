@@ -2,39 +2,39 @@
 <!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="anypaper Reference Manual" link="index.html" author="" name="anypaper">
   <chapters>
-    <sub name="anyṔaper Classes" link="ch01.html">
-      <sub name="AnypaperWallpapersetter" link="AnypaperWallpapersetter.html"/>
-      <sub name="AnypaperPreview" link="AnypaperPreview.html"/>
-      <sub name="AnypaperParameters" link="AnypaperParameters.html"/>
-      <sub name="AnypaperImage" link="AnypaperImage.html"/>
-      <sub name="AnypaperWindow" link="AnypaperWindow.html"/>
+    <sub name="anyPaper Classes" link="ch01.html">
+      <sub name="AnypaperWallpapersetter" link="anypaper-anypaper-wallpapersetter.html"/>
+      <sub name="AnypaperPreview" link="anypaper-anypaper-preview.html"/>
+      <sub name="AnypaperParameters" link="anypaper-anypaper-parameters.html"/>
+      <sub name="AnypaperImage" link="anypaper-anypaper-image.html"/>
+      <sub name="AnypaperWindow" link="anypaper-anypaper-window.html"/>
       <sub name="anypaper_command" link="anypaper-anypaper-command.html"/>
     </sub>
     <sub name="Object Hierarchy" link="object-tree.html"/>
     <sub name="API Index" link="api-index-full.html"/>
   </chapters>
   <functions>
-    <function name="AnypaperWallpapersetterPrivate" link="AnypaperWallpapersetter.html#AnypaperWallpapersetterPrivate"/>
-    <function name="AnypaperWallpapersetter" link="AnypaperWallpapersetter.html#AnypaperWallpapersetter-struct"/>
-    <function name="anypaper_wallpapersetter_detect ()" link="AnypaperWallpapersetter.html#anypaper-wallpapersetter-detect"/>
-    <function name="anypaper_wallpapersetter_file ()" link="AnypaperWallpapersetter.html#anypaper-wallpapersetter-file"/>
-    <function name="AnypaperPreviewPrivate" link="AnypaperPreview.html#AnypaperPreviewPrivate"/>
-    <function name="AnypaperPreview" link="AnypaperPreview.html#AnypaperPreview-struct"/>
-    <function name="anypaper_preview_create ()" link="AnypaperPreview.html#anypaper-preview-create"/>
-    <function name="AnypaperParametersPrivate" link="AnypaperParameters.html#AnypaperParametersPrivate"/>
-    <function name="AnypaperParameters" link="AnypaperParameters.html#AnypaperParameters-struct"/>
-    <function name="anypaper_parameters_position_test ()" link="AnypaperParameters.html#anypaper-parameters-position-test"/>
-    <function name="anypaper_parameters_load ()" link="AnypaperParameters.html#anypaper-parameters-load"/>
-    <function name="anypaper_parameters_write ()" link="AnypaperParameters.html#anypaper-parameters-write"/>
-    <function name="AnypaperImagePrivate" link="AnypaperImage.html#AnypaperImagePrivate"/>
-    <function name="AnypaperImage" link="AnypaperImage.html#AnypaperImage-struct"/>
-    <function name="anypaper_image_make ()" link="AnypaperImage.html#anypaper-image-make"/>
-    <function name="anypaper_image_move ()" link="AnypaperImage.html#anypaper-image-move"/>
-    <function name="AnypaperWindowPrivate" link="AnypaperWindow.html#AnypaperWindowPrivate"/>
-    <function name="AnypaperWindow" link="AnypaperWindow.html#AnypaperWindow-struct"/>
-    <function name="anypaper_window_set_position_range ()" link="AnypaperWindow.html#anypaper-window-set-position-range"/>
-    <function name="anypaper_window_create ()" link="AnypaperWindow.html#anypaper-window-create"/>
-    <function name="LICENSE" link="anypaper-anypaper-command.html#LICENSE--CAPS"/>
+    <function name="AnypaperWallpapersetterPrivate" link="anypaper-anypaper-wallpapersetter.html#AnypaperWallpapersetterPrivate"/>
+    <function name="AnypaperWallpapersetter" link="anypaper-anypaper-wallpapersetter.html#AnypaperWallpapersetter-struct"/>
+    <function name="anypaper_wallpapersetter_detect ()" link="anypaper-anypaper-wallpapersetter.html#anypaper-wallpapersetter-detect"/>
+    <function name="anypaper_wallpapersetter_file ()" link="anypaper-anypaper-wallpapersetter.html#anypaper-wallpapersetter-file"/>
+    <function name="AnypaperPreviewPrivate" link="anypaper-anypaper-preview.html#AnypaperPreviewPrivate"/>
+    <function name="AnypaperPreview" link="anypaper-anypaper-preview.html#AnypaperPreview-struct"/>
+    <function name="anypaper_preview_create ()" link="anypaper-anypaper-preview.html#anypaper-preview-create"/>
+    <function name="AnypaperParametersPrivate" link="anypaper-anypaper-parameters.html#AnypaperParametersPrivate"/>
+    <function name="AnypaperParameters" link="anypaper-anypaper-parameters.html#AnypaperParameters-struct"/>
+    <function name="anypaper_parameters_position_test ()" link="anypaper-anypaper-parameters.html#anypaper-parameters-position-test"/>
+    <function name="anypaper_parameters_load ()" link="anypaper-anypaper-parameters.html#anypaper-parameters-load"/>
+    <function name="anypaper_parameters_write ()" link="anypaper-anypaper-parameters.html#anypaper-parameters-write"/>
+    <function name="AnypaperImagePrivate" link="anypaper-anypaper-image.html#AnypaperImagePrivate"/>
+    <function name="AnypaperImage" link="anypaper-anypaper-image.html#AnypaperImage-struct"/>
+    <function name="anypaper_image_make ()" link="anypaper-anypaper-image.html#anypaper-image-make"/>
+    <function name="anypaper_image_move ()" link="anypaper-anypaper-image.html#anypaper-image-move"/>
+    <function name="AnypaperWindowPrivate" link="anypaper-anypaper-window.html#AnypaperWindowPrivate"/>
+    <function name="AnypaperWindow" link="anypaper-anypaper-window.html#AnypaperWindow-struct"/>
+    <function name="anypaper_window_set_position_range ()" link="anypaper-anypaper-window.html#anypaper-window-set-position-range"/>
+    <function name="anypaper_window_create ()" link="anypaper-anypaper-window.html#anypaper-window-create"/>
+    <function name="LICENSE" link="anypaper-anypaper-command.html#LICENSE:CAPS"/>
     <function name="show_version_and_exit ()" link="anypaper-anypaper-command.html#show-version-and-exit"/>
     <function name="show_license_and_exit ()" link="anypaper-anypaper-command.html#show-license-and-exit"/>
     <function name="anypaper_command_load ()" link="anypaper-anypaper-command.html#anypaper-command-load"/>

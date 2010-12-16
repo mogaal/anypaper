@@ -9,14 +9,15 @@ anypaper_command
 
 </para>
 
-
 <!-- ##### SECTION See_Also ##### -->
 <para>
 
 </para>
 
-
 <!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
 
 
 <!-- ##### MACRO LICENSE ##### -->
@@ -31,6 +32,7 @@ anypaper_command
 
 </para>
 
+@void: 
 
 
 <!-- ##### FUNCTION show_license_and_exit ##### -->
@@ -38,6 +40,7 @@ anypaper_command
 
 </para>
 
+@void: 
 
 
 <!-- ##### FUNCTION anypaper_command_load ##### -->

@@ -73,28 +73,32 @@ anypaper_image_init (AnypaperImage *self)
 	priv->background = NULL;
 }
 
-/**
- * anypaper_image_make:
- * @image: a #AnypaperImage
- * @parameters: a #AnypaperParameters
- * 
- * Generate a #GdkPixbuf background and a #GdkPixbuf base image with the parameters selected in #AnypaperParameters.
- */
-
 gint size (gint base, gint final)
 {
 	if (final%base == 0) return final;
 	else return (final/base + 1) * base;
 }
 
-void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
+/**
+ * anypaper_image_make:
+ * @image: a #AnypaperImage
+ * @parameters: a #AnypaperParameters
+ * 
+ * Generate a #GdkPixbuf background and a #GdkPixbuf base image with the parameters selected in #AnypaperParameters.
+ *
+ * Returns: %TRUE if the image file is successfully opened, %FALSE if an error occurs
+ */
+
+gboolean anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 {
-	GdkPixbuf *tempbuf, *tempbuf2;
+	GdkPixbuf *tempbuf, *tempbuf2;gchar *endptr;
 	gint wn, hn;
 
 	gint md, screenw, screenh, w, h;
 	gint ox=0, oy=0, x=0, y=0, dx=0, dy=0;
 	gdouble sx=1, sy=1, scx = 1, scy = 1;
+	gboolean openImage;
+
 	g_object_unref(image->priv->base);
 	g_object_unref(image->priv->background);
 
@@ -103,6 +107,14 @@ void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 	screenh=parameters->height;
 	
 	tempbuf = gdk_pixbuf_new_from_file(parameters->file, NULL);
+	if (tempbuf == NULL)
+	{
+		parameters->file = g_strdup_printf(ANYPAPER_DATA "noimage.png");
+		tempbuf = gdk_pixbuf_new_from_file(parameters->file, NULL);
+		openImage = FALSE;
+	}
+	else openImage = TRUE;
+
 	if (md==5)
 	{
 		tempbuf2 = tempbuf;
@@ -118,7 +130,7 @@ void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 	g_object_unref(tempbuf);
 
 	tempbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, (screenw), (screenh));
-	gdk_pixbuf_fill(tempbuf, spi(parameters->background,16)*256);
+	gdk_pixbuf_fill(tempbuf, (guint32) g_ascii_strtoll(&(parameters->background)[1], NULL, 16)*256);//gdk_pixbuf_fill(tempbuf, spi(parameters->background,16)*256);
 	image->priv->background = gdk_pixbuf_add_alpha(tempbuf, FALSE, 0, 0, 0);
 	g_object_unref(tempbuf);
 	w = gdk_pixbuf_get_width(image->priv->base);
@@ -226,6 +238,7 @@ void anypaper_image_make(AnypaperImage *image, AnypaperParameters *parameters)
 	parameters->positiony = oy;
 	parameters->scalex = sx * scx;
 	parameters->scaley = sy * scy;
+	return openImage;
 }
 
 /**

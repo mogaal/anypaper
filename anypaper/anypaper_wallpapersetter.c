@@ -152,7 +152,7 @@ wmsetbg:	-s -S\n\
 feh:		--bg-scale\n\
 hsetroot:	-fill\n\
 chbg:		-once -mode maximize\n\
-display:	`xwininfo -root 2> /dev/null|grep geom` -window root\n\
+display:	-window root\n\
 qiv:		--root_s\n\
 xv:		-max -smooth -root -quit\n\
 xsri:		--center-x --center-y --scale-width=100 --scale-height=100\n\

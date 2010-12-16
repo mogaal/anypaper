@@ -64,7 +64,7 @@ struct _AnypaperImageClass
 
 GType anypaper_image_get_type (void);
 
-void anypaper_image_make (AnypaperImage *image, AnypaperParameters *parameters);
+gboolean anypaper_image_make (AnypaperImage *image, AnypaperParameters *parameters);
 
 void anypaper_image_move (AnypaperImage *image, AnypaperParameters *parameters);
 
