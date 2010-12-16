@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(anypaper, 2.2, cdvdt at sourceforge.net)
+AC_INIT(anypaper, 2.3, cdvdt at sourceforge.net)
 AC_CONFIG_SRCDIR([anypaper/anypaper.c])
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE

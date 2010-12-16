@@ -1,3 +1,29 @@
+=== anyPaper 2.3 ===
+
+2010-26-08  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_image.c (anypaper_image_make): Changed behavior when the image file couldn't be opened and changed the value returned by the function
+	* anypaper/anypaper_window.c (set_wallpaper_common): Added error message for when the image file could not be opened
+
+2010-25-08  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_window.c (save_default_file_cb, save_file_as_cb): Added file filter on "Default file" and "Save as..." dialog.
+	* anypaper/anypaper_preview.c (gboolean fullscreen_timeout_cb, image_fullscreen_button, gboolean mouse_motion): Added hiding scrollbars for preview window in fullscreen.
+	* anypaper/anypaper_wallpapersetter.c (anypaper_wallpapersetter_file): Updated wallpapersetter list.
+
+2010-24-08  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_window.c (open_image_file_cb): Added file filter on "Open File" dialog.
+
+2010-23-08  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_preview.c (anypaper_preview_create): Changed the police of gtk_scrolled_window
+	* anypaper/anypaper.c (main), anypaper/anypaper_command.c (anypaper_command_load): Added error handling for file not found and command not found. Calling of function system() replaced by g_spawn_command_line_sync ().
+
+2010-16-06  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>
+
+	* anypaper/anypaper_window.c (set_wallpaper_common): Calling of function system() replaced by g_spawn_command_line_async ().
+
 === anyPaper 2.2 ===
 
 2010-05-01  Sergio Rodrigues de Oliveira Filho <cdvdt@users.sourceforge.net>

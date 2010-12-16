@@ -129,8 +129,16 @@ static void show_window_preview_cb( GtkWidget *widget, AnypaperWindow *window )
 
 static void set_image_common( AnypaperWindow *window )
 {
+	GtkWidget *dialog_error;
+
 	block_callback(window);
-	anypaper_image_make (window->image, window->parameters);
+	if (!anypaper_image_make (window->image, window->parameters))
+	{
+		dialog_error = gtk_message_dialog_new (GTK_WINDOW (window->priv->window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, "Could not open image file");
+		gtk_window_set_title (GTK_WINDOW (dialog_error), "Error");
+	 	g_signal_connect_swapped (dialog_error, "response", G_CALLBACK (gtk_widget_destroy), dialog_error);
+		gtk_widget_show(dialog_error);
+	}
 	anypaper_window_set_position_range(window, window->parameters->positionx, window->parameters->positiony);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON (window->priv->spin1), (gdouble) window->parameters->positionx);
 	gtk_spin_button_set_value(GTK_SPIN_BUTTON (window->priv->spin2), (gdouble) window->parameters->positiony);
@@ -163,10 +171,22 @@ void open_image_file_cb ( GtkWidget *widget, AnypaperWindow *window )
 {
 	GtkWidget *dialog;
 	GtkWidget *preview;
+	GtkFileFilter *filterImages, *filterAll;
 
 	preview = gtk_image_new ();
 
 	dialog = gtk_file_chooser_dialog_new ("Open File", GTK_WINDOW(window->priv->window), GTK_FILE_CHOOSER_ACTION_OPEN, GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT, NULL);
+
+	filterImages = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterImages),"JPEG images");
+	gtk_file_filter_add_mime_type(GTK_FILE_FILTER(filterImages), "image/jpeg/*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterImages);
+
+	filterAll = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterAll),"All files");
+	gtk_file_filter_add_pattern(GTK_FILE_FILTER(filterAll), "*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterAll);
+
 	gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (dialog), preview);
 	gtk_file_chooser_set_filename(GTK_FILE_CHOOSER (dialog), gtk_entry_get_text (GTK_ENTRY (window->priv->file_entry)));
 	g_signal_connect (dialog, "update-preview", G_CALLBACK (update_preview_cb), preview);
@@ -184,10 +204,12 @@ void open_image_file_cb ( GtkWidget *widget, AnypaperWindow *window )
 
 static void set_image_file_cb ( GtkWidget *widget, AnypaperWindow *window )
 {
-	gchar *file;
+	gchar *file, *down_filename;
 	GtkWidget *dialog_error;
 
-	file = gtk_entry_get_text(GTK_ENTRY(window->priv->file_entry));
+	file = g_strdup(gtk_entry_get_text(GTK_ENTRY(window->priv->file_entry)));
+	down_filename = g_ascii_strdown (file, -1);
+
 	if (g_file_test (file, G_FILE_TEST_EXISTS))
 	{
 		g_free (window->parameters->file);
@@ -200,8 +222,8 @@ static void set_image_file_cb ( GtkWidget *widget, AnypaperWindow *window )
 		gtk_window_set_title (GTK_WINDOW (dialog_error), "Error");
 	 	g_signal_connect_swapped (dialog_error, "response", G_CALLBACK (gtk_widget_destroy), dialog_error);
 		gtk_widget_show(dialog_error);
-		g_free (file);
 	}
+	g_free(down_filename);
 }
 
 static void set_image_style_cb ( GtkWidget *widget, AnypaperWindow *window )
@@ -260,6 +282,7 @@ static void set_image_background_cb ( GtkWidget *widget, AnypaperWindow *window 
 	background_buffer = gdk_color_to_string (&color);
 	g_free(window->parameters->background);
 	window->parameters->background = g_strdup_printf("#%c%c%c%c%c%c", background_buffer[1], background_buffer[2], background_buffer[5], background_buffer[6], background_buffer[9], background_buffer[10]);
+	/*g_print("%s", &(window->parameters->background)[1]);*/
 	set_image_common (window);
 }
 
@@ -386,8 +409,10 @@ gboolean set_wallpaper_common ( AnypaperWindow *window )
 
 	if (rcfile == NULL) rcfile = g_strdup_printf("%s/.anypaper/anypaperrc", g_get_home_dir ());
 	if (lastwallpaperfile == NULL) lastwallpaperfile = g_strdup_printf("%s/.anypaper/lastwallpaper", g_get_home_dir ());
-	window->parameters->defaultfile = gtk_entry_get_text (GTK_ENTRY (window->priv->def_entry));
-	window->parameters->command = gtk_entry_get_text (GTK_ENTRY (window->priv->com_entry));
+	g_free(window->parameters->defaultfile);
+	g_free(window->parameters->command);
+	window->parameters->defaultfile = g_strdup(gtk_entry_get_text (GTK_ENTRY (window->priv->def_entry)));
+	window->parameters->command = g_strdup(gtk_entry_get_text (GTK_ENTRY (window->priv->com_entry)));
 	down_filename = g_ascii_strdown (window->parameters->defaultfile, -1);
 
 	if (!g_file_test (window->parameters->file, G_FILE_TEST_EXISTS))
@@ -414,7 +439,7 @@ gboolean set_wallpaper_common ( AnypaperWindow *window )
 			{
 				gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "jpeg", NULL, "quality", "100", NULL);
 				buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
-				system (buffer);
+				g_spawn_command_line_async (buffer, NULL);
 			}
 		}
 		else if(g_str_has_suffix (down_filename, ".png"))
@@ -431,7 +456,7 @@ gboolean set_wallpaper_common ( AnypaperWindow *window )
 			{
 				gdk_pixbuf_save (window->image->image, window->parameters->defaultfile, "png", NULL, NULL);
 				buffer=g_strdup_printf("%s \"%s\"", window->parameters->command, window->parameters->defaultfile);
-				system (buffer);
+				g_spawn_command_line_async (buffer, NULL);
 			}
 		}
 		else
@@ -451,6 +476,7 @@ gboolean set_wallpaper_common ( AnypaperWindow *window )
 void save_default_file_cb( GtkWidget *widget, AnypaperWindow *window )
 {
 	GtkWidget *dialog, *dialog_error;
+	GtkFileFilter *filterImages, *filterAll;
 
 	dialog = gtk_file_chooser_dialog_new ("Default file",
 					      GTK_WINDOW(window->priv->window),
@@ -458,6 +484,16 @@ void save_default_file_cb( GtkWidget *widget, AnypaperWindow *window )
 					      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 					      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
 					      NULL);
+
+	filterImages = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterImages),"JPEG images");
+	gtk_file_filter_add_mime_type(GTK_FILE_FILTER(filterImages), "image/jpeg/*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterImages);
+
+	filterAll = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterAll),"All files");
+	gtk_file_filter_add_pattern(GTK_FILE_FILTER(filterAll), "*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterAll);
 	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), FALSE);
 
 	gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (dialog), gtk_entry_get_text (GTK_ENTRY (window->priv->def_entry)));
@@ -492,6 +528,8 @@ void save_default_file_cb( GtkWidget *widget, AnypaperWindow *window )
 void save_file_as_cb( GtkWidget *widget, AnypaperWindow *window )
 {
 	GtkWidget *dialog, *dialog_error;
+	GtkFileFilter *filterImages, *filterAll;
+
 
 	dialog = gtk_file_chooser_dialog_new ("Save as...",
 					      GTK_WINDOW(window->priv->window),
@@ -499,11 +537,21 @@ void save_file_as_cb( GtkWidget *widget, AnypaperWindow *window )
 					      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 					      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
 					      NULL);
+
+	filterImages = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterImages),"JPEG images");
+	gtk_file_filter_add_mime_type(GTK_FILE_FILTER(filterImages), "image/jpeg/*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterImages);
+
+	filterAll = gtk_file_filter_new ();
+	gtk_file_filter_set_name (GTK_FILE_FILTER(filterAll),"All files");
+	gtk_file_filter_add_pattern(GTK_FILE_FILTER(filterAll), "*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filterAll);
+	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), FALSE);
 	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), TRUE);
 
 	gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (dialog), g_path_get_dirname (gtk_entry_get_text (GTK_ENTRY (window->priv->file_entry))));
 	gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), "Untitled image.png");
-
 
 	if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
 	{

@@ -38,6 +38,7 @@
 struct _AnypaperPreviewPrivate {
 	GtkWidget	*window;
 	GtkWidget	*hbox;
+	GtkWidget	*window2;
 	GtkWidget	*button;
 	GSource		*source;
 	gint		state;
@@ -90,6 +91,7 @@ static void timeout_destroy (GSource *source)
 static gboolean fullscreen_timeout_cb (AnypaperPreview *preview)
 {
 	gtk_widget_hide (preview->priv->hbox);
+	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(preview->priv->window2), GTK_POLICY_NEVER, GTK_POLICY_NEVER);
 
 	timeout_destroy (preview->priv->source);
 
@@ -118,6 +120,7 @@ static void image_fullscreen_button ( GtkWidget *widget, AnypaperPreview *previe
 		image_button = gtk_button_get_image (GTK_BUTTON(button));
 		gtk_image_set_from_stock (GTK_IMAGE(image_button), GTK_STOCK_LEAVE_FULLSCREEN, GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(image_button);gtk_widget_hide(preview->priv->hbox);
+		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(preview->priv->window2), GTK_POLICY_NEVER, GTK_POLICY_NEVER);
 		preview->priv->state = WINDOW_FULLSCREEN_STATE;
 	}
 	else
@@ -126,13 +129,18 @@ static void image_fullscreen_button ( GtkWidget *widget, AnypaperPreview *previe
 		image_button = gtk_button_get_image (GTK_BUTTON(button));
 		gtk_image_set_from_stock (GTK_IMAGE(image_button), GTK_STOCK_FULLSCREEN, GTK_ICON_SIZE_BUTTON);
 		gtk_widget_show(image_button);gtk_widget_show(preview->priv->hbox);
+		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(preview->priv->window2), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 		preview->priv->state = WINDOW_NORMAL_STATE;
 	}
 }
 
 static gboolean mouse_motion (GtkWidget *widget, GdkEventMotion *event, AnypaperPreview *preview)
 {
-	if (!GTK_WIDGET_VISIBLE (preview->priv->hbox)) gtk_widget_show(preview->priv->hbox);
+	if (!GTK_WIDGET_VISIBLE (preview->priv->hbox))
+	{
+		gtk_widget_show(preview->priv->hbox);
+		gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(preview->priv->window2), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+	}
 
 	if (preview->priv->state == WINDOW_FULLSCREEN_STATE)
 	{
@@ -192,6 +200,9 @@ void anypaper_preview_create (AnypaperPreview *preview, AnypaperParameters *para
 
 	window2 = gtk_scrolled_window_new(NULL, NULL);
 	gtk_window_set_title(GTK_WINDOW(preview->priv->window), "preview");
+
+	preview->priv->window2 = window2;
+	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW(window2), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 
 	fixed = gtk_vbox_new(FALSE, 0);
 

@@ -1,36 +1,41 @@
-<refentry id="AnypaperWindow">
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
+<refentry id="anypaper-anypaper-window">
 <refmeta>
-<refentrytitle role="top_of_page" id="AnypaperWindow.top_of_page">AnypaperWindow</refentrytitle>
+<refentrytitle role="top_of_page" id="anypaper-anypaper-window.top_of_page">AnypaperWindow</refentrytitle>
 <manvolnum>3</manvolnum>
-<refmiscinfo>ANYPAPER Library</refmiscinfo>
+<refmiscinfo>
+  ANYPAPER Library
+</refmiscinfo>
 </refmeta>
-
 <refnamediv>
 <refname>AnypaperWindow</refname>
 <refpurpose>builds the user interface and controls the operation of anyPaper</refpurpose>
 </refnamediv>
-<refsect1 id="AnypaperWindow.stability-level">
+<refsect1 id="anypaper-anypaper-window.stability-level">
 <title>Stability Level</title>
 Stable, unless otherwise indicated
 </refsect1>
 
-<refsynopsisdiv id="AnypaperWindow.synopsis" role="synopsis">
+<refsynopsisdiv id="anypaper-anypaper-window.synopsis" role="synopsis">
 <title role="synopsis.title">Synopsis</title>
-
+<anchor id="AnypaperWindow"/>
 <synopsis>
-
 #include &lt;anypaper_window.h&gt;
 
                     <link linkend="AnypaperWindowPrivate">AnypaperWindowPrivate</link>;
                     <link linkend="AnypaperWindow-struct">AnypaperWindow</link>;
-<link linkend="void">void</link>                <link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link>  (<link linkend="AnypaperWindow">AnypaperWindow</link> *window,
-                                                         <link linkend="gint">gint</link> rangex,
-                                                         <link linkend="gint">gint</link> rangey);
-<link linkend="void">void</link>                <link linkend="anypaper-window-create">anypaper_window_create</link>              (<link linkend="AnypaperWindow">AnypaperWindow</link> *window);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link>  (<parameter><link linkend="AnypaperWindow"><type>AnypaperWindow</type></link> *window</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> rangex</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> rangey</parameter>);
+<link linkend="void"><returnvalue>void</returnvalue></link>                <link linkend="anypaper-window-create">anypaper_window_create</link>              (<parameter><link linkend="AnypaperWindow"><type>AnypaperWindow</type></link> *window</parameter>);
 </synopsis>
 </refsynopsisdiv>
-
-<refsect1 id="AnypaperWindow.object-hierarchy" role="object_hierarchy">
+<refsect1 id="anypaper-anypaper-window.object-hierarchy" role="object_hierarchy">
 <title role="object_hierarchy.title">Object Hierarchy</title>
 <synopsis>
   <link linkend="GObject">GObject</link>
@@ -38,31 +43,24 @@ Stable, unless otherwise indicated
 </synopsis>
 </refsect1>
 
-
-
-
-
-
-
-
-<refsect1 id="AnypaperWindow.description" role="desc">
+<refsect1 id="anypaper-anypaper-window.description" role="desc">
 <title role="desc.title">Description</title>
 <para>
-The application class that builds the user interface and controls the operation of anyPaper. This class also links the objects required for the implementation of the anyPaper</para>
-<para>
+The application class that builds the user interface and controls the operation of anyPaper. This class also links the objects required for the implementation of the anyPaper
 </para>
 </refsect1>
-
-<refsect1 id="AnypaperWindow.details" role="details">
+<refsect1 id="anypaper-anypaper-window.details" role="details">
 <title role="details.title">Details</title>
 <refsect2 id="AnypaperWindowPrivate" role="struct">
 <title>AnypaperWindowPrivate</title>
-<indexterm zone="AnypaperWindowPrivate"><primary sortas="AnypaperWindowPrivate">AnypaperWindowPrivate</primary></indexterm><programlisting>typedef struct _AnypaperWindowPrivate AnypaperWindowPrivate;</programlisting>
+<indexterm zone="AnypaperWindowPrivate"><primary>AnypaperWindowPrivate</primary></indexterm>
+<programlisting>typedef struct _AnypaperWindowPrivate AnypaperWindowPrivate;</programlisting>
 <para>
 </para></refsect2>
 <refsect2 id="AnypaperWindow-struct" role="struct">
 <title>AnypaperWindow</title>
-<indexterm zone="AnypaperWindow-struct"><primary sortas="AnypaperWindow">AnypaperWindow</primary></indexterm><programlisting>typedef struct {
+<indexterm zone="AnypaperWindow-struct"><primary>AnypaperWindow</primary></indexterm>
+<programlisting>typedef struct {
 	AnypaperParameters		*parameters;
 	AnypaperImage			*image;
 	AnypaperPreview			*preview;
@@ -70,68 +68,60 @@ The application class that builds the user interface and controls the operation 
 } AnypaperWindow;
 </programlisting>
 <para>
-Contains the necessary objects for operation of the anyPaper</para>
-<para>
+Contains the necessary objects for operation of the anyPaper
 </para><variablelist role="struct">
-<varlistentry>
-<term><link linkend="AnypaperParameters">AnypaperParameters</link>&#160;*<structfield>parameters</structfield>;</term>
-<listitem><simpara> is a <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>
+<varlistentry><term><link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>&#160;*<structfield id="AnypaperWindow-struct.parameters">parameters</structfield>;</term>
+<listitem><simpara>is a <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>
 </simpara></listitem>
 </varlistentry>
-<varlistentry>
-<term><link linkend="AnypaperImage">AnypaperImage</link>&#160;*<structfield>image</structfield>;</term>
-<listitem><simpara> is a <link linkend="AnypaperImage"><type>AnypaperImage</type></link>
+<varlistentry><term><link linkend="AnypaperImage"><type>AnypaperImage</type></link>&#160;*<structfield id="AnypaperWindow-struct.image">image</structfield>;</term>
+<listitem><simpara>is a <link linkend="AnypaperImage"><type>AnypaperImage</type></link>
 </simpara></listitem>
 </varlistentry>
-<varlistentry>
-<term><link linkend="AnypaperPreview">AnypaperPreview</link>&#160;*<structfield>preview</structfield>;</term>
-<listitem><simpara> is a <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
+<varlistentry><term><link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>&#160;*<structfield id="AnypaperWindow-struct.preview">preview</structfield>;</term>
+<listitem><simpara>is a <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
 </simpara></listitem>
 </varlistentry>
-<varlistentry>
-<term><link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link>&#160;*<structfield>wallpapersetter</structfield>;</term>
-<listitem><simpara> is a <link linkend="AnypaperWallpapersetter"><type>AnypaperWallpapersetter</type></link>;
+<varlistentry><term><link linkend="AnypaperWallpapersetter"><type>AnypaperWallpapersetter</type></link>&#160;*<structfield id="AnypaperWindow-struct.wallpapersetter">wallpapersetter</structfield>;</term>
+<listitem><simpara>is a <link linkend="AnypaperWallpapersetter"><type>AnypaperWallpapersetter</type></link>;
 </simpara></listitem>
 </varlistentry>
 </variablelist></refsect2>
 <refsect2 id="anypaper-window-set-position-range" role="function">
 <title>anypaper_window_set_position_range ()</title>
-<indexterm zone="anypaper-window-set-position-range"><primary sortas="anypaper_window_set_position_range">anypaper_window_set_position_range</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_window_set_position_range  (<link linkend="AnypaperWindow">AnypaperWindow</link> *window,
-                                                         <link linkend="gint">gint</link> rangex,
-                                                         <link linkend="gint">gint</link> rangey);</programlisting>
+<indexterm zone="anypaper-window-set-position-range"><primary>anypaper_window_set_position_range</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                anypaper_window_set_position_range  (<parameter><link linkend="AnypaperWindow"><type>AnypaperWindow</type></link> *window</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> rangex</parameter>,
+                                                         <parameter><link linkend="gint"><type>gint</type></link> rangey</parameter>);</programlisting>
 <para>
-Sets the range of displacement allowed for the image.</para>
-<para>
+Sets the range of displacement allowed for the image.
 </para><variablelist role="params">
 <varlistentry><term><parameter>window</parameter>&#160;:</term>
-<listitem><simpara> the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>
+<listitem><simpara>the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>
 </simpara></listitem></varlistentry>
 <varlistentry><term><parameter>rangex</parameter>&#160;:</term>
-<listitem><simpara> half of the displacement allowed in x direction
+<listitem><simpara>half of the displacement allowed in x direction
 </simpara></listitem></varlistentry>
 <varlistentry><term><parameter>rangey</parameter>&#160;:</term>
-<listitem><simpara> half of the displacement allowed in y direction
+<listitem><simpara>half of the displacement allowed in y direction
 </simpara></listitem></varlistentry>
 </variablelist></refsect2>
 <refsect2 id="anypaper-window-create" role="function">
 <title>anypaper_window_create ()</title>
-<indexterm zone="anypaper-window-create"><primary sortas="anypaper_window_create">anypaper_window_create</primary></indexterm><programlisting><link linkend="void">void</link>                anypaper_window_create              (<link linkend="AnypaperWindow">AnypaperWindow</link> *window);</programlisting>
+<indexterm zone="anypaper-window-create"><primary>anypaper_window_create</primary></indexterm>
+<programlisting><link linkend="void"><returnvalue>void</returnvalue></link>                anypaper_window_create              (<parameter><link linkend="AnypaperWindow"><type>AnypaperWindow</type></link> *window</parameter>);</programlisting>
 <para>
-Creates and shows the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>.</para>
-<para>
+Creates and shows the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>.
 </para><variablelist role="params">
 <varlistentry><term><parameter>window</parameter>&#160;:</term>
-<listitem><simpara> the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>
+<listitem><simpara>the <link linkend="AnypaperWindow"><type>AnypaperWindow</type></link>
 </simpara></listitem></varlistentry>
 </variablelist></refsect2>
 
 </refsect1>
-
-
-
-<refsect1 id="AnypaperWindow.see-also">
+<refsect1 id="anypaper-anypaper-window.see-also">
 <title>See Also</title>
-#AnypaperImage, <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>, <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
+<link linkend="AnypaperImage"><type>AnypaperImage</type></link>, <link linkend="AnypaperParameters"><type>AnypaperParameters</type></link>, <link linkend="AnypaperPreview"><type>AnypaperPreview</type></link>
 </refsect1>
 
 </refentry>

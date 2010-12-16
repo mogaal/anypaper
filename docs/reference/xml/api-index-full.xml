@@ -1,32 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE indexdiv PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+]>
 <indexdiv>
-<indexdiv><title>A</title>
-<indexentry><primaryie linkends="AnypaperImage-struct"><link linkend="AnypaperImage">AnypaperImage</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperImagePrivate"><link linkend="AnypaperImagePrivate">AnypaperImagePrivate</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperParameters-struct"><link linkend="AnypaperParameters">AnypaperParameters</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperParametersPrivate"><link linkend="AnypaperParametersPrivate">AnypaperParametersPrivate</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperPreview-struct"><link linkend="AnypaperPreview">AnypaperPreview</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperPreviewPrivate"><link linkend="AnypaperPreviewPrivate">AnypaperPreviewPrivate</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperWallpapersetter-struct"><link linkend="AnypaperWallpapersetter">AnypaperWallpapersetter</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperWallpapersetterPrivate"><link linkend="AnypaperWallpapersetterPrivate">AnypaperWallpapersetterPrivate</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperWindow-struct"><link linkend="AnypaperWindow">AnypaperWindow</link></primaryie></indexentry>
-<indexentry><primaryie linkends="AnypaperWindowPrivate"><link linkend="AnypaperWindowPrivate">AnypaperWindowPrivate</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-command-load"><link linkend="anypaper-command-load">anypaper_command_load</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-image-make"><link linkend="anypaper-image-make">anypaper_image_make</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-image-move"><link linkend="anypaper-image-move">anypaper_image_move</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-parameters-load"><link linkend="anypaper-parameters-load">anypaper_parameters_load</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-parameters-position-test"><link linkend="anypaper-parameters-position-test">anypaper_parameters_position_test</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-parameters-write"><link linkend="anypaper-parameters-write">anypaper_parameters_write</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-preview-create"><link linkend="anypaper-preview-create">anypaper_preview_create</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-wallpapersetter-detect"><link linkend="anypaper-wallpapersetter-detect">anypaper_wallpapersetter_detect</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-wallpapersetter-file"><link linkend="anypaper-wallpapersetter-file">anypaper_wallpapersetter_file</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-window-create"><link linkend="anypaper-window-create">anypaper_window_create</link></primaryie></indexentry>
-<indexentry><primaryie linkends="anypaper-window-set-position-range"><link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link></primaryie></indexentry>
+<indexdiv><title>C</title>
+<indexentry><primaryie linkends="anypaper-command-load"><link linkend="anypaper-command-load">anypaper_command_load</link>, function in <link linkend="anypaper-anypaper-command">anypaper_command</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>I</title>
+<indexentry><primaryie linkends="AnypaperImage-struct"><link linkend="AnypaperImage-struct">AnypaperImage</link>, struct in <link linkend="anypaper-anypaper-image">AnypaperImage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperImagePrivate"><link linkend="AnypaperImagePrivate">AnypaperImagePrivate</link>, struct in <link linkend="anypaper-anypaper-image">anypaper_image</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-image-make"><link linkend="anypaper-image-make">anypaper_image_make</link>, function in <link linkend="anypaper-anypaper-image">AnypaperImage</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-image-move"><link linkend="anypaper-image-move">anypaper_image_move</link>, function in <link linkend="anypaper-anypaper-image">AnypaperImage</link></primaryie></indexentry>
 </indexdiv>
 <indexdiv><title>L</title>
-<indexentry><primaryie linkends="LICENSE--CAPS"><link linkend="LICENSE--CAPS">LICENSE</link></primaryie></indexentry>
+<indexentry><primaryie linkends="LICENSE:CAPS"><link linkend="LICENSE:CAPS">LICENSE</link>, macro in <link linkend="anypaper-anypaper-command">anypaper_command</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>P</title>
+<indexentry><primaryie linkends="AnypaperParameters-struct"><link linkend="AnypaperParameters-struct">AnypaperParameters</link>, struct in <link linkend="anypaper-anypaper-parameters">AnypaperParameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperParametersPrivate"><link linkend="AnypaperParametersPrivate">AnypaperParametersPrivate</link>, struct in <link linkend="anypaper-anypaper-parameters">anypaper_parameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-load"><link linkend="anypaper-parameters-load">anypaper_parameters_load</link>, function in <link linkend="anypaper-anypaper-parameters">AnypaperParameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-position-test"><link linkend="anypaper-parameters-position-test">anypaper_parameters_position_test</link>, function in <link linkend="anypaper-anypaper-parameters">AnypaperParameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-parameters-write"><link linkend="anypaper-parameters-write">anypaper_parameters_write</link>, function in <link linkend="anypaper-anypaper-parameters">AnypaperParameters</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperPreview-struct"><link linkend="AnypaperPreview-struct">AnypaperPreview</link>, struct in <link linkend="anypaper-anypaper-preview">AnypaperPreview</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperPreviewPrivate"><link linkend="AnypaperPreviewPrivate">AnypaperPreviewPrivate</link>, struct in <link linkend="anypaper-anypaper-preview">anypaper_preview</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-preview-create"><link linkend="anypaper-preview-create">anypaper_preview_create</link>, function in <link linkend="anypaper-anypaper-preview">AnypaperPreview</link></primaryie></indexentry>
 </indexdiv>
 <indexdiv><title>S</title>
-<indexentry><primaryie linkends="show-license-and-exit"><link linkend="show-license-and-exit">show_license_and_exit</link></primaryie></indexentry>
-<indexentry><primaryie linkends="show-version-and-exit"><link linkend="show-version-and-exit">show_version_and_exit</link></primaryie></indexentry>
+<indexentry><primaryie linkends="show-license-and-exit"><link linkend="show-license-and-exit">show_license_and_exit</link>, function in <link linkend="anypaper-anypaper-command">anypaper_command</link></primaryie></indexentry>
+<indexentry><primaryie linkends="show-version-and-exit"><link linkend="show-version-and-exit">show_version_and_exit</link>, function in <link linkend="anypaper-anypaper-command">anypaper_command</link></primaryie></indexentry>
+</indexdiv>
+<indexdiv><title>W</title>
+<indexentry><primaryie linkends="AnypaperWallpapersetter-struct"><link linkend="AnypaperWallpapersetter-struct">AnypaperWallpapersetter</link>, struct in <link linkend="anypaper-anypaper-wallpapersetter">AnypaperWallpapersetter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWallpapersetterPrivate"><link linkend="AnypaperWallpapersetterPrivate">AnypaperWallpapersetterPrivate</link>, struct in <link linkend="anypaper-anypaper-wallpapersetter">anypaper_wallpapersetter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-wallpapersetter-detect"><link linkend="anypaper-wallpapersetter-detect">anypaper_wallpapersetter_detect</link>, function in <link linkend="anypaper-anypaper-wallpapersetter">AnypaperWallpapersetter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-wallpapersetter-file"><link linkend="anypaper-wallpapersetter-file">anypaper_wallpapersetter_file</link>, function in <link linkend="anypaper-anypaper-wallpapersetter">AnypaperWallpapersetter</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWindow-struct"><link linkend="AnypaperWindow-struct">AnypaperWindow</link>, struct in <link linkend="anypaper-anypaper-window">AnypaperWindow</link></primaryie></indexentry>
+<indexentry><primaryie linkends="AnypaperWindowPrivate"><link linkend="AnypaperWindowPrivate">AnypaperWindowPrivate</link>, struct in <link linkend="anypaper-anypaper-window">anypaper_window</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-window-create"><link linkend="anypaper-window-create">anypaper_window_create</link>, function in <link linkend="anypaper-anypaper-window">AnypaperWindow</link></primaryie></indexentry>
+<indexentry><primaryie linkends="anypaper-window-set-position-range"><link linkend="anypaper-window-set-position-range">anypaper_window_set_position_range</link>, function in <link linkend="anypaper-anypaper-window">AnypaperWindow</link></primaryie></indexentry>
 </indexdiv>
 </indexdiv>

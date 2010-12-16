@@ -20,8 +20,7 @@ NOINST_H_FILES =	anypaper_image.h\
 			anypaper_preview.h\
 			anypaper_wallpapersetter.h
 
-libanypaper_la_SOURCES = func.c\
-			anypaper_image.c\
+libanypaper_la_SOURCES = anypaper_image.c\
 			anypaper_command.c\
 			anypaper_window.c\
 			anypaper_parameters.c\

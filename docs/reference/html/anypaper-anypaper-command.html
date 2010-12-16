@@ -3,21 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>anypaper_command</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
-<link rel="start" href="index.html" title="anypaper Reference Manual">
-<link rel="up" href="ch01.html" title="anyṔaper Classes">
-<link rel="prev" href="AnypaperWindow.html" title="AnypaperWindow">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="anypaper Reference Manual">
+<link rel="up" href="ch01.html" title="anyPaper Classes">
+<link rel="prev" href="anypaper-anypaper-window.html" title="AnypaperWindow">
 <link rel="next" href="object-tree.html" title="Object Hierarchy">
-<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.14 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
-<link rel="chapter" href="ch01.html" title="anyṔaper Classes">
-<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
-<link rel="index" href="api-index-full.html" title="API Index">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
 <tr valign="middle">
-<td><a accesskey="p" href="AnypaperWindow.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="p" href="anypaper-anypaper-window.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">anypaper Reference Manual</th>
@@ -25,11 +22,11 @@
 </tr>
 <tr><td colspan="5" class="shortcuts">
 <a href="#anypaper-anypaper-command.synopsis" class="shortcut">Top</a>
-                 | 
-                <a href="#anypaper-anypaper-command.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#anypaper-anypaper-command.description" class="shortcut">Description</a>
 </td></tr>
 </table>
-<div class="refentry" lang="en">
+<div class="refentry" title="anypaper_command">
 <a name="anypaper-anypaper-command"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
 <td valign="top">
@@ -38,100 +35,76 @@
 </td>
 <td valign="top" align="right"></td>
 </tr></table></div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Stability Level">
 <a name="anypaper-anypaper-command.stability-level"></a><h2>Stability Level</h2>
 Stable, unless otherwise indicated
 </div>
-<div class="refsynopsisdiv">
+<div class="refsynopsisdiv" title="Synopsis">
 <a name="anypaper-anypaper-command.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
-
 #include &lt;anypaper_preview.h&gt;
 
-#define             <a
-href="http://anypaper.sourceforge.net/anypaper/anypaper-anypaper-command.html#LICENSE--CAPS"
->LICENSE</a>
-void                <a
-href="http://anypaper.sourceforge.net/anypaper/anypaper-anypaper-command.html#show-version-and-exit"
->show_version_and_exit</a>               (void);
-void                <a
-href="http://anypaper.sourceforge.net/anypaper/anypaper-anypaper-command.html#show-license-and-exit"
->show_license_and_exit</a>               (void);
-void                <a
-href="http://anypaper.sourceforge.net/anypaper/anypaper-anypaper-command.html#anypaper-command-load"
->anypaper_command_load</a>               (<a
-href="http://anypaper.sourceforge.net/anypaper/AnypaperParameters.html"
->AnypaperParameters</a> *parameters);
+#define             <a class="link" href="anypaper-anypaper-command.html#LICENSE:CAPS" title="LICENSE">LICENSE</a>
+<span class="returnvalue">void</span>                <a class="link" href="anypaper-anypaper-command.html#show-version-and-exit" title="show_version_and_exit ()">show_version_and_exit</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="anypaper-anypaper-command.html#show-license-and-exit" title="show_license_and_exit ()">show_license_and_exit</a>               (<em class="parameter"><code><span class="type">void</span></code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="anypaper-anypaper-command.html#anypaper-command-load" title="anypaper_command_load ()">anypaper_command_load</a>               (<em class="parameter"><code><a class="link" href="anypaper-anypaper-parameters.html#AnypaperParameters"><span class="type">AnypaperParameters</span></a> *parameters</code></em>);
 </pre>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Description">
 <a name="anypaper-anypaper-command.description"></a><h2>Description</h2>
 <p>
-Set of function that controls the parameters passed by the command line and the behavior of anyPaper related to them.</p>
-<p>
+Set of function that controls the parameters passed by the command line and the behavior of anyPaper related to them.
 </p>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="Details">
 <a name="anypaper-anypaper-command.details"></a><h2>Details</h2>
-<div class="refsect2" lang="en">
-<a name="LICENSE--CAPS"></a><h3>LICENSE</h3>
+<div class="refsect2" title="LICENSE">
+<a name="LICENSE:CAPS"></a><h3>LICENSE</h3>
 <pre class="programlisting">#define             LICENSE</pre>
 <p>
-macro that defines a summary of the license used</p>
-<p>
+macro that defines a summary of the license used
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="show_version_and_exit ()">
 <a name="show-version-and-exit"></a><h3>show_version_and_exit ()</h3>
-<pre class="programlisting">void                show_version_and_exit               (void);</pre>
+<pre class="programlisting"><span class="returnvalue">void</span>                show_version_and_exit               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-shows the version of anyPaper and exits</p>
-<p>
+shows the version of anyPaper and exits
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="show_license_and_exit ()">
 <a name="show-license-and-exit"></a><h3>show_license_and_exit ()</h3>
-<pre class="programlisting">void                show_license_and_exit               (void);</pre>
+<pre class="programlisting"><span class="returnvalue">void</span>                show_license_and_exit               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-shows the version of anyPaper and the content of <a
-href="http://anypaper.sourceforge.net/anypaper/anypaper-anypaper-command.html#LICENSE--CAPS"
-><span class="type">LICENSE</span></a> and exits</p>
-<p>
+shows the version of anyPaper and the content of <a class="link" href="anypaper-anypaper-command.html#LICENSE:CAPS" title="LICENSE"><span class="type">LICENSE</span></a> and exits
 </p>
 </div>
 <hr>
-<div class="refsect2" lang="en">
+<div class="refsect2" title="anypaper_command_load ()">
 <a name="anypaper-command-load"></a><h3>anypaper_command_load ()</h3>
-<pre class="programlisting">void                anypaper_command_load               (<a
-href="http://anypaper.sourceforge.net/anypaper/AnypaperParameters.html"
->AnypaperParameters</a> *parameters);</pre>
+<pre class="programlisting"><span class="returnvalue">void</span>                anypaper_command_load               (<em class="parameter"><code><a class="link" href="anypaper-anypaper-parameters.html#AnypaperParameters"><span class="type">AnypaperParameters</span></a> *parameters</code></em>);</pre>
 <p>
-This function reads the parameters passed by the command line and sets the value to the right member of <a
-href="http://anypaper.sourceforge.net/anypaper/AnypaperParameters.html"
-><span class="type">AnypaperParameters</span></a></p>
-<p>
+This function reads the parameters passed by the command line and sets the value to the right member of <a class="link" href="anypaper-anypaper-parameters.html#AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </p>
 <div class="variablelist"><table border="0">
 <col align="left" valign="top">
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>parameters</code></em> :</span></p></td>
-<td> object that contains the parameters used in anyPaper
+<td>object that contains the parameters used in anyPaper
 </td>
 </tr></tbody>
 </table></div>
 </div>
 </div>
-<div class="refsect1" lang="en">
+<div class="refsect1" title="See Also">
 <a name="anypaper-anypaper-command.see-also"></a><h2>See Also</h2>
-#AnypaperImage, <a
-href="http://anypaper.sourceforge.net/anypaper/AnypaperParameters.html"
-><span class="type">AnypaperParameters</span></a>
+<a class="link" href="anypaper-anypaper-image.html#AnypaperImage"><span class="type">AnypaperImage</span></a>, <a class="link" href="anypaper-anypaper-parameters.html#AnypaperParameters"><span class="type">AnypaperParameters</span></a>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.11</div>
+          Generated by GTK-Doc V1.14</div>
 </body>
 </html>

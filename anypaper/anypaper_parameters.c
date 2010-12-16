@@ -150,12 +150,12 @@ void anypaper_parameters_load (AnypaperParameters *parameters, gchar *filename)
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"PositionX"))
 				{
-					parameters->positionx=spi(subfield[1], 10);
+					parameters->positionx=g_ascii_strtoll(subfield[1], NULL, 10);//parameters->positionx=spi(subfield[1], 10);
 					par_counter++;
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"PositionY"))
 				{
-					parameters->positiony=spi(subfield[1], 10);
+					parameters->positiony=g_ascii_strtoll(subfield[1], NULL, 10);//parameters->positiony=spi(subfield[1], 10);
 					par_counter++;
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"ScaleX"))
@@ -170,12 +170,12 @@ void anypaper_parameters_load (AnypaperParameters *parameters, gchar *filename)
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"Width"))
 				{
-					parameters->width=spi(subfield[1], 10);
+					parameters->width=g_ascii_strtoll(subfield[1], NULL, 10);//parameters->width=spi(subfield[1], 10);
 					par_counter++;
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"Height"))
 				{
-					parameters->height=spi(subfield[1], 10);
+					parameters->height=g_ascii_strtoll(subfield[1], NULL, 10);//parameters->height=spi(subfield[1], 10);
 					par_counter++;
 				}
 				if (!g_ascii_strcasecmp(subfield[0],"BackgroundColor"))
